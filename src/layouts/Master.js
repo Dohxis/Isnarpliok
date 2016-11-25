@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import { Card, Menu, Input, Dropdown, Image} from 'semantic-ui-react';
 import "./Master.css";
 import {browserHistory} from "react-router";
+import {observer} from 'mobx-react'
 
+@observer
 class Master extends Component {
     constructor(){
        super();

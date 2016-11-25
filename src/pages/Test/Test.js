@@ -1,7 +1,10 @@
 import React, {Component} from 'react'
 import {Button} from 'semantic-ui-react'
 import {browserHistory} from 'react-router'
+import * as firebase from 'firebase';
+import {observer} from 'mobx-react'
 
+@observer
 class Test extends Component {
 
 	login(){
