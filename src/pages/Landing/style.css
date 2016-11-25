@@ -27,3 +27,8 @@
 	font-size: 20px;
 	color: #fff;
 }
+
+.dimmer > .content > .center{
+  padding-top: calc(50% - 70px);
+  vertical-align: unset !important;
+}
