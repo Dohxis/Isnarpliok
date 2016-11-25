@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Card, Menu, Input, Dropdown, Image} from 'semantic-ui-react';
 import "./Master.css";
+import {browserHistory} from "react-router";
 
 class Master extends Component {
     constructor(){
@@ -18,11 +19,26 @@ class Master extends Component {
         );
     }
 
+    router_user(){
+        browserHistory.push('/app/user')
+    }
+
+    router_home(){
+        browserHistory.push('/app')
+    }
+
+    router_select(){
+        browserHistory.push('/app/select')
+    }
+
     render(){
         const trig = (
             <span>
-                <Image avatar src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" />
-                Domas
+                <Image avatar
+                    src={this.props.route.store.user.picture?
+                        this.props.route.store.user.picture:
+                        "https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg"} />
+                {this.props.route.store.user.nickname}
             </span>
         );
         const logo = (
@@ -35,7 +51,7 @@ class Master extends Component {
         return (
             <div className="App">
                 <Menu className="fixed" inverted>
-                    <Menu.Item className="menu-item" link>
+                    <Menu.Item className="menu-item" link onClick={_this.router_home.bind(this)}>
                         <div className="menu-item-text">
                             {logo}
                         </div>
@@ -45,9 +61,9 @@ class Master extends Component {
                             Sidebar trigger
                         </div>
                     </Menu.Item>
-                    <Menu.Item className="menu-item" link>
+                    <Menu.Item className="menu-item" onClick={_this.router_select.bind(this)} link>
                         <div className="menu-item-text">
-                            DeNoodle
+                            Select Language
                         </div>
                     </Menu.Item>
                     <Menu.Item className="menu-item" link>
@@ -58,7 +74,7 @@ class Master extends Component {
                     <Menu.Item className="useris" position="right">
                         <Dropdown trigger={trig} pointing='top right' icon={null}>
                             <Dropdown.Menu>
-                                <Dropdown.Item text='Profile' icon='user' />
+                                <Dropdown.Item text='Profile' icon='user' onClick={_this.router_user.bind(this)}/>
                                 <Dropdown.Item text='Sign Out' icon='sign out' />
                             </Dropdown.Menu>
                         </Dropdown>

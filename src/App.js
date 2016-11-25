@@ -31,11 +31,12 @@ class App extends Component {
   render() {
     return (
         <Router history={ browserHistory }>
-            <Route path="app" component={ Master }>
+            <Route path="app" component={ Master } store={store}>
                 <IndexRoute component={ Landing } />
                 <IndexRoute component={ Test } auth={auth} store={store} />
                 <Route path="test" component={ Test } auth={auth} />
                 <Route path="select" component={ LangSelect } />
+                <Route path="user" component={null} />
             </Route>
             <Route path="/" component={ Landing } auth={auth} store={store} />
         </Router>

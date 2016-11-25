@@ -1,6 +1,10 @@
 .content{
-	 margin-top: 53px;
+	 margin-top: 78px;
 	 text-align: center;
+}
+
+.hidden-proxy{
+	display: none;
 }
 
 .fixed{
