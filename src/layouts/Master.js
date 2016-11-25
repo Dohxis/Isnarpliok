@@ -31,6 +31,11 @@ class Master extends Component {
         browserHistory.push('/app/select')
     }
 
+    sign_out(){
+        this.props.route.store.logout();
+        browserHistory.push('/')
+    }
+
     render(){
         const trig = (
             <span>
@@ -75,7 +80,7 @@ class Master extends Component {
                         <Dropdown trigger={trig} pointing='top right' icon={null}>
                             <Dropdown.Menu>
                                 <Dropdown.Item text='Profile' icon='user' onClick={_this.router_user.bind(this)}/>
-                                <Dropdown.Item text='Sign Out' icon='sign out' />
+                                <Dropdown.Item text='Sign Out' icon='sign out' onClick={_this.sign_out.bind(this)} />
                             </Dropdown.Menu>
                         </Dropdown>
                     </Menu.Item>
