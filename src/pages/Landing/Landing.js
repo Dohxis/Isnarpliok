@@ -1,29 +1,68 @@
 import React, {Component} from 'react'
-import { Container, Header, Button } from 'semantic-ui-react';
+import { Container, Header, Button, List } from 'semantic-ui-react';
 import Particles from 'react-particles-js';
-import ParticlesParams from './particlesjs-config.json';
 import './style.css';
 
 class Landing extends Component {
+	componentWillMount(){
+        if(localStorage.getItem('id_auth')){
+            browserHistory.push('app');
+        }
+    }
+
+	login(){
+		this.props.route.auth.show();
+	}
 
 	render(){
 		return (
-			<Container>
-				<Header>
-					<div className="left">
-						<div className="logo">Logo</div>
-						<div className="learn-to-code">LEARN TO CODE!</div>
-					</div>
-					<div className="right">
-						<Button onClick={this.props.route.auth.show()}>START LEARNING</Button>
-						<Button onClick={this.props.route.auth.show()}>LOGIN</Button>
-					</div>
-				</Header>
+			<div className="main-container">
+				<Container>
 
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa strong. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede link mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.</p>
-			
-				<Particles params="ParticlesParams" />
-			</Container>
+					<Header>
+						<div className="logo">
+							Logo
+						</div>
+					</Header>
+
+					<div className="content">
+						<div className="left">
+							<List>
+								<List.Item>
+									<List.Icon name='users' />
+									<List.Content>Semantic UI</List.Content>
+								</List.Item>
+								<List.Item>
+									<List.Icon name='marker' />
+									<List.Content>New York, NY</List.Content>
+								</List.Item>
+								<List.Item>
+									<List.Icon name='mail' />
+									<List.Content>
+										<a href='mailto:jack@semantic-ui.com'>jack@semantic-ui.com</a>
+									</List.Content>
+								</List.Item>
+								<List.Item>
+									<List.Icon name='linkify' />
+									<List.Content>
+										<a href='http://www.semantic-ui.com'>semantic-ui.com</a>
+									</List.Content>
+								</List.Item>
+							</List>
+						</div>
+						<div className="right">
+							Right content
+							<div className="start-learning">
+								<Button onClick={this.login.bind(this)}>START LEARNING</Button>
+							</div>
+						</div>
+					</div>
+
+					<div className="particles-background">
+						<Particles />
+					</div>
+				</Container>
+			</div>
 		);
 	}
 
