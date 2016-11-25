@@ -7,6 +7,8 @@ import Master from './layouts/Master'
 import Landing from './pages/Landing/Landing'
 import Test from './pages/Test/Test'
 
+import store from './store'
+
 import './Global.css'
 
 var auth = new Auth0Lock('5lEbkHrNuPFVqEKoE5M9LcjMy40ucITe', 'denoodle.eu.auth0.com', {
@@ -30,7 +32,7 @@ class App extends Component {
         <Router history={ browserHistory }>
             <Route path="app" component={ Master }>
                 <IndexRoute component={ Landing } />
-                <Route path="test" component={ Test } auth={auth} />
+                <Route path="test" component={ Test } auth={auth} store={store} />
             </Route>
             <Route path="/" component={ Landing } auth={auth} />
         </Router>
