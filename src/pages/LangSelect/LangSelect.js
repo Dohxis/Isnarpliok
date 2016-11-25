@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { Card, Icon, Image, Dimmer, Header, Segment, Grid, Message } from 'semantic-ui-react'
+import * as firebase from 'firebase';
 
 class LangSelect extends Component {
 	
@@ -9,7 +10,7 @@ class LangSelect extends Component {
   handleHide = () => this.setState({ active: false })
 	
 	start() {
-		console.log("hiii");
+		firebase.database().ref().child('users/' + this.props.route.store.userID + '/active').set(true);
 	}
 	
 	render(){
@@ -28,7 +29,7 @@ class LangSelect extends Component {
 						<Grid.Column key='1' width='4' stretched>
 							<Dimmer.Dimmable as={Segment} onMouseEnter={this.handleShow} onMouseLeave={this.handleHide}>
 								<Dimmer active={active}>
-									<a href='#' onClick={this.start}>
+									<a href='#' onClick={this.start.bind(this)}>
 										<Header as='h2' icon inverted>
 											<Icon name='mail forward' />
 											Click to start
