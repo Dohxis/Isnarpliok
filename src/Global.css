@@ -10,9 +10,13 @@
     background: #414755;
 }
 
+.ace-cobalt {
+    background-color: #353a45 !important;
+}
+
 .menu-item-text {
-    font-weight: bold;
-    font-size: 1.2em;
+    font-weight: bold !important;
+    font-size: 1.2em !important;
     text-align: center;
 }
 
@@ -52,6 +56,11 @@
 
 .menu-item-first {
     background: #3B3F4C !important;
+}
+
+.ace_gutter {
+    background: #1b1c23 !important;
+    color: white !important;
 }
 
 .menu-item-first > .menu-item-text > span > img {

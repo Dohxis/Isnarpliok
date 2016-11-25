@@ -130,6 +130,7 @@
     color: #2196F3
 }
 .mui-tabs__bar.mui-tabs__bar--justified {
+    margin-top: 0 !important;
     display: table;
     width: 100%;
     table-layout: fixed

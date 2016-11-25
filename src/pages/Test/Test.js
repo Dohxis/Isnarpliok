@@ -4,14 +4,13 @@ import * as firebase from 'firebase'
 import {browserHistory} from 'react-router'
 import { Button } from 'semantic-ui-react'
 
-import { Grid, Image, TextArea } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 import './style.css';
 
-import brace from 'brace';
 import AceEditor from 'react-ace';
 
-import 'brace/mode/java';
-import 'brace/theme/github';
+import 'brace/mode/javascript';
+import 'brace/theme/cobalt';
 
 import Tabs from 'muicss/lib/react/tabs';
 import Tab from 'muicss/lib/react/tab';
@@ -71,6 +70,10 @@ class Test extends Component {
 								mode="javascript"
 								theme="github"
 								onChange={this.onCodeChange.bind(this)}
+								theme="cobalt"
+                                fontSize={18}
+                                showPrintMargin={true}
+                                highlightActiveLine={true}
 								name="46512546"
 								editorProps={{$blockScrolling: true}}
 								className="code-editor"
@@ -109,25 +112,21 @@ class Test extends Component {
 									</Grid>
 								</Tab>
 				        <Tab value="pane-2" label="Terminal">
-									<p>
-										Nulla facilisi. Nunc volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut sit amet orci vel mauris blandit vehicula. Nullam quis enim. Integer dignissim viverra velit. Curabitur in odio. In hac habitasse platea dictumst. Ut consequat, tellus eu volutpat varius, justo orci elementum dolor, sed imperdiet nulla tellus ut diam. Vestibulum ipsum ante, malesuada quis, tempus ac, placerat sit amet, elit.
-									</p>
-									<p>
-										Nulla facilisi. Nunc volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut sit amet orci vel mauris blandit vehicula. Nullam quis enim. Integer dignissim viverra velit. Curabitur in odio. In hac habitasse platea dictumst. Ut consequat, tellus eu volutpat varius, justo orci elementum dolor, sed imperdiet nulla tellus ut diam. Vestibulum ipsum ante, malesuada quis, tempus ac, placerat sit amet, elit.
-									</p>
-									<p>
-										Nulla facilisi. Nunc volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut sit amet orci vel mauris blandit vehicula. Nullam quis enim. Integer dignissim viverra velit. Curabitur in odio. In hac habitasse platea dictumst. Ut consequat, tellus eu volutpat varius, justo orci elementum dolor, sed imperdiet nulla tellus ut diam. Vestibulum ipsum ante, malesuada quis, tempus ac, placerat sit amet, elit.
-									</p>
-									<p>
-										Nulla facilisi. Nunc volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut sit amet orci vel mauris blandit vehicula. Nullam quis enim. Integer dignissim viverra velit. Curabitur in odio. In hac habitasse platea dictumst. Ut consequat, tellus eu volutpat varius, justo orci elementum dolor, sed imperdiet nulla tellus ut diam. Vestibulum ipsum ante, malesuada quis, tempus ac, placerat sit amet, elit.
-									</p>
-									<p>
-										Nulla facilisi. Nunc volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut sit amet orci vel mauris blandit vehicula. Nullam quis enim. Integer dignissim viverra velit. Curabitur in odio. In hac habitasse platea dictumst. Ut consequat, tellus eu volutpat varius, justo orci elementum dolor, sed imperdiet nulla tellus ut diam. Vestibulum ipsum ante, malesuada quis, tempus ac, placerat sit amet, elit.
-									</p>
-									<p>
-										Nulla facilisi. Nunc volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut sit amet orci vel mauris blandit vehicula. Nullam quis enim. Integer dignissim viverra velit. Curabitur in odio. In hac habitasse platea dictumst. Ut consequat, tellus eu volutpat varius, justo orci elementum dolor, sed imperdiet nulla tellus ut diam. Vestibulum ipsum ante, malesuada quis, tempus ac, placerat sit amet, elit.
-									</p>
-								</Tab>
+                            <AceEditor
+                                width="100%"
+                                height="calc(100vh - 70px)"
+                                mode="javascript"
+                                theme="cobalt"
+                                fontSize={18}
+                                showPrintMargin={true}
+                                highlightActiveLine={true}
+                                name="46512546"
+                                editorProps={{$blockScrolling: true}}
+                                className="code-editor"
+                                readOnly={true}
+                            />
+                        </Tab>
+
 				      </Tabs>
 						</Grid.Column>
 					</Grid.Row>
