@@ -1,0 +1,27 @@
+.logo{
+    padding: 20px 40px;
+    font-size: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid rgba(228, 228, 228, 0.79);
+}
+.particles-background > div{
+    background-color: #34495E;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+.left{
+	width: 50%;
+	float: left;
+}
+.right{
+	width: 50%;
+	float: right;
+}
+.content{
+	padding: 20px 100px;
+	font-size: 20px;
+}
