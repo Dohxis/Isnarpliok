@@ -1,11 +1,12 @@
-.logo{
+.land_logo{
     padding: 20px 40px;
     font-size: 40px;
     line-height: 40px;
     border-bottom: 1px solid rgba(228, 228, 228, 0.79);
+    color: #fff;
 }
-.particles-background > div{
-    background-color: #34495E;
+.land_particles-background > div{
+    background-color: #202d3a;
     position: absolute;
     left: 0;
     top: 0;
@@ -13,15 +14,16 @@
     height: 100vh;
     z-index: -1;
 }
-.left{
+.land_left{
 	width: 50%;
 	float: left;
 }
-.right{
+.land_right{
 	width: 50%;
 	float: right;
 }
-.content{
+.land_content{
 	padding: 20px 100px;
 	font-size: 20px;
+	color: #fff;
 }

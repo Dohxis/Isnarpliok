@@ -5,6 +5,7 @@ import Auth0Lock from 'auth0-lock'
 
 import Master from './layouts/Master'
 import Landing from './pages/Landing/Landing'
+import LangSelect from './pages/LangSelect/LangSelect'
 import Test from './pages/Test/Test'
 
 import store from './store'
@@ -49,9 +50,9 @@ class App extends Component {
   render() {
     return (
         <Router history={ browserHistory }>
-            <Route path="app" component={ Master }>
+            <Route path="app" component={ Master } store={store}>
                 <IndexRoute component={ Test } auth={auth} store={store} onEnter={restore_login}/>
-                <Route path="test" component={ Test } auth={auth} store={store} onEnter={restore_login}/>
+                <Route path="select" component={ LangSelect } store={store} onEnter={restore_login}/>
             </Route>
             <Route path="/" component={ Landing } auth={auth} store={store} />
         </Router>

@@ -1,13 +1,14 @@
 .content{
-	 margin-top: 53px
+	 margin-top: 53px;
+	 text-align: center;
 }
 
 .fixed{
-	height: 70px
+	height: 70px;
 }
 
 .menu-item{
-	width: 180px;
+	width: 160px;
 }
 
 .menu-item-text{
