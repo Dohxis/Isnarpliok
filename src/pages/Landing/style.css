@@ -81,6 +81,16 @@
     line-height: 35px;
 }
 
+.land_particles-background{
+    background-image: url('/land_background.jpg');
+    height: 100vh;
+    background-size: cover;
+}
+.land_particles-background > div{
+    background-color: rgba(32, 45, 58, 0.43);
+    height: 100vh;
+}
+
 
 .mui-tabs__pane{
   overflow-y: scroll;

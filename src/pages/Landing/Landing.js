@@ -83,7 +83,19 @@ class Landing extends Component {
 					</div>
 
 					<div className="land_particles-background">
-						<Particles params={
+						<div></div>
+					</div>
+				</Container>
+			</div>
+		);
+	}
+
+}
+
+export default Landing;
+
+/*
+<Particles params={
 											{
 											  "particles": {
 											    "number": {
@@ -195,12 +207,4 @@ class Landing extends Component {
 											  "retina_detect": true
 											}
 						} />
-					</div>
-				</Container>
-			</div>
-		);
-	}
-
-}
-
-export default Landing;
+*/
