@@ -80,7 +80,6 @@ class Master extends Component {
                 </div>
                 <div className="content">
                     {this.props.children}
-                    hello
                 </div>
             </div>
         );
