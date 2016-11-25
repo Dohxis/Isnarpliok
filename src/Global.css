@@ -5,3 +5,40 @@
 .auth0-lock-overlay {
     background: radial-gradient(#111118, #111118) rgba(34,34,40,0.94) !important;
 }
+
+.ui.inverted.menu {
+    background: #414755;
+}
+
+.menu-item-text {
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.right.item::before {
+    background: rgba(255,255,255,0) !important;
+}
+
+.menu-item {
+    justify-content: center;
+}
+
+.special_l {
+    border-radius: 20px !important;
+    background-color: #3B3F4C !important;
+    color: white !important;
+}
+
+.special_l > img {
+    padding : 4px;
+    border-radius: 20px !important;
+}
+
+.menu-item-first {
+    background: #3B3F4C !important;
+}
+
+.menu-item-first > .menu-item-text > span > img {
+    margin-right: .5em !important;
+}
