@@ -8,9 +8,10 @@ class App extends Component {
   render() {
     return (
         <Router history={ browserHistory }>
-            <Route path="/" component={ Master }>
+            <Route path="app" component={ Master }>
                 <IndexRoute component={ Landing } />
             </Route>
+            <Route path="/" component={ Landing } />
         </Router>
     );
   }
