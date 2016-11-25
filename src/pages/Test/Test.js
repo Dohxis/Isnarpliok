@@ -45,11 +45,8 @@ class Test extends Component {
 	}
 	
 	onRun() {
-		var codeToEval = this.state.code;
-		
-		codeToEval = codeToEval.replace(/console.log/g, "window.store.updateCode");
-		
-		window.store.code = '';
+		var codeToEval = this.state.code.replace(/console.log/g, "window.store.updateCode");
+		this.props.route.store.code = '';
 		eval(codeToEval);
 	}
 	
@@ -77,6 +74,7 @@ class Test extends Component {
 								name="46512546"
 								editorProps={{$blockScrolling: true}}
 								className="code-editor"
+								value={this.state.code}
 							/>
 						</Grid.Column>
 						<Grid.Column>
@@ -120,7 +118,7 @@ class Test extends Component {
                                 fontSize={18}
                                 showPrintMargin={true}
                                 highlightActiveLine={true}
-                                name="46512546"
+                                name="new"
                                 editorProps={{$blockScrolling: true}}
                                 className="code-editor"
                                 readOnly={true}
