@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Card, Menu, Input, Dropdown, Image} from 'semantic-ui-react';
+import { Card, Menu, Input, Dropdown, Image, Icon} from 'semantic-ui-react';
 import "./Master.css";
 import {browserHistory} from "react-router";
 import {observer} from 'mobx-react'
@@ -41,11 +41,12 @@ class Master extends Component {
     render(){
         const trig = (
             <span className="ui image massive label special_l">
-                <Image
+                <a onClick={this.router_user.bind(this)} className="white_link"> <Image
                     src={this.props.route.store.user.identity ?
                         this.props.route.store.user.identity.picture :
                         "https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg"} />
-                {this.props.route.store.user.identity ? this.props.route.store.user.identity.nickname : ""}
+                <span className="white_link"> {this.props.route.store.user.identity ? this.props.route.store.user.identity.nickname : ""}</span></a>
+                <a onClick={this.sign_out.bind(this)} className="white_link"><Icon name='sign out' className="icon_l" /></a>
             </span>
         );
         const logo = (
@@ -66,12 +67,7 @@ class Master extends Component {
                     </Menu.Item>
 
                     <Menu.Item className="useris" position="right">
-                        <Dropdown trigger={trig} pointing='top right' icon={null}>
-                            <Dropdown.Menu>
-                                <Dropdown.Item text='Profile' icon='user' onClick={_this.router_user.bind(this)}/>
-                                <Dropdown.Item text='Sign Out' icon='sign out' onClick={_this.sign_out.bind(this)} />
-                            </Dropdown.Menu>
-                        </Dropdown>
+                        {trig}
                     </Menu.Item>
 
                 </Menu>
