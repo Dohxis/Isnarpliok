@@ -55,7 +55,7 @@ class Master extends Component {
                             DeNoodle
                         </div>
                     </Menu.Item>
-                    <Menu.Item className="user-item" position="right">
+                    <Menu.Item className="useris" position="right">
                         <Dropdown trigger={trig} pointing='top right' icon={null}>
                             <Dropdown.Menu>
                                 <Dropdown.Item text='Profile' icon='user' />
@@ -64,7 +64,7 @@ class Master extends Component {
                         </Dropdown>
                     </Menu.Item>
                 </Menu>
-                <div  closable={true} className={"ui right very wide vertical inverted sidebar labeled icon menu overlay " + this.state.sideToggle}>
+                <div className={"ui right very wide vertical inverted sidebar labeled icon menu overlay " + this.state.sideToggle}>
                   <a className="item">
                     <i className="home icon"></i>
                     Home
