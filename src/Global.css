@@ -1,0 +1,7 @@
+.auth0-lock-badge-bottom {
+    display: none;
+}
+
+.auth0-lock-overlay {
+    background: radial-gradient(#111118, #111118) rgba(34,34,40,0.94) !important;
+}
