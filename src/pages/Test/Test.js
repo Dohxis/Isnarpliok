@@ -21,7 +21,7 @@ class Test extends Component {
 	
 	constructor() {
 		super();
-		this.state = { code: '' };
+		this.state = { code: '', output: '' };
 	}
 	
 	componentWillMount(){
@@ -47,9 +47,9 @@ class Test extends Component {
 	onRun() {
 		var codeToEval = this.state.code;
 		
-		codeToEval = codeToEval.replace(/console.log/g, "printToTerminal");
+		codeToEval = codeToEval.replace(/console.log/g, "window.store.updateCode");
 		
-		console.log(codeToEval);
+		window.store.code = '';
 		eval(codeToEval);
 	}
 	
@@ -124,6 +124,7 @@ class Test extends Component {
                                 editorProps={{$blockScrolling: true}}
                                 className="code-editor"
                                 readOnly={true}
+																value={this.props.route.store.code}
                             />
                         </Tab>
 
