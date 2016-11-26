@@ -5,3 +5,24 @@
 .auth0-lock-overlay {
     background: radial-gradient(#111118, #111118) rgba(34,34,40,0.94) !important;
 }
+
+.ui.inverted.menu {
+    background: #414755;
+}
+
+.menu-item-text {
+    font-weight: bold;
+    text-align: center;
+}
+
+.menu-item {
+    justify-content: center;
+}
+
+.menu-item-first {
+    background: #3B3F4C !important;
+}
+
+.menu-item-first > .menu-item-text > span > img {
+    margin-right: .5em !important;
+}

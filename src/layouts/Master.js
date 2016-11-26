@@ -50,7 +50,7 @@ class Master extends Component {
         );
         const logo = (
             <span>
-                <Image avatar src="/logo.png"/>
+                <Image avatar src="/logo_white.png"/>
                 DeNoodle
             </span>
         )
@@ -58,7 +58,7 @@ class Master extends Component {
         return (
             <div className="App">
                 <Menu className="fixed" inverted>
-                    <Menu.Item className="menu-item" link onClick={_this.router_home.bind(this)}>
+                    <Menu.Item className="menu-item menu-item-first" link onClick={_this.router_home.bind(this)}>
                         <div className="menu-item-text">
                             {logo}
                         </div>
