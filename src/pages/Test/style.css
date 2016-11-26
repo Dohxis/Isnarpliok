@@ -49,3 +49,16 @@
     transition: transform 300ms; }
   .Collapsible__trigger.is-open:after {
     transform: rotateZ(180deg); }
+
+.buttongroup_1{
+	padding-right: 5px !important;
+	padding-left: 5px !important;
+}
+
+._blue {
+	background: rgb(162, 84, 33) !important;
+}
+
+._mint {
+	background: rgb(255, 130, 46) !important;
+}
