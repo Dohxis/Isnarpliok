@@ -5,9 +5,12 @@ class Store {
     @observable loggedIn = false;
     @observable user = {};
 
-    login(user, id){
+    login(user, id, first = false){
         this.userID = id;
-        this.user = user;
+        if(first)
+            this.user.identity = user;
+        else
+            this.user = user;
     }
 
     logout(){

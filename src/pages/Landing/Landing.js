@@ -18,7 +18,7 @@ class Landing extends Component {
 		this.props.route.auth.on("authenticated", function(authResult) {
 			this.getProfile(authResult.idToken, function(error, profile) {
 				const id = new Buffer(profile.user_id).toString('base64');
-				self.props.route.store.login(profile, id);
+				self.props.route.store.login(profile, id, true);
 				localStorage.setItem('id_auth', id);
 				browserHistory.push('/app');
 				self.props.route.auth.hide();
