@@ -42,17 +42,18 @@ class Master extends Component {
         const trig = (
             <span className="ui image massive label special_l">
                 <a onClick={this.router_user.bind(this)} className="white_link"> <Image
+                    style={{marginLeft: '-16px'}}
                     src={this.props.route.store.user.identity ?
                         this.props.route.store.user.identity.picture :
                         "https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg"} />
-                <span className="white_link"> {this.props.route.store.user.identity ? this.props.route.store.user.identity.nickname : ""}</span></a>
-                <a onClick={this.sign_out.bind(this)} className="white_link"><Icon name='sign out' className="icon_l" /></a>
+                <span style={{textTransform: 'uppercase'}} className="white_link"> {this.props.route.store.user.identity ? this.props.route.store.user.identity.nickname : ""}</span></a>
+                <a onClick={this.sign_out.bind(this)} className="white_link"><Icon name='power' className="icon_l" /></a>
             </span>
         );
         const logo = (
             <span>
-                <Image avatar src="/logo_white.png"/>
-                Denoodle
+                <Image className="master_white-logo" avatar src="/logo_white.png"/>
+                <span>Denoodle</span>
             </span>
         )
         var _this = this;

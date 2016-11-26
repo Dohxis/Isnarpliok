@@ -22,7 +22,7 @@ class Test extends Component {
 
 	constructor() {
 		super();
-		this.state = { code: '', output: '', lvl: '' };
+		this.state = { code: '// ?', output: '', lvl: '' };
 	}
 
 	componentWillMount(){
@@ -33,6 +33,18 @@ class Test extends Component {
 			});
 			
 			this.lvl = firebase.database().ref().child('users/' + localStorage.getItem('id_auth') + '/level');
+	}
+
+	componentWillMount(){
+	    const user = firebase.database().ref().child('users/' + localStorage.getItem('id_auth') + '/active');
+	    user.on('value', snap => {
+	      if(!snap.val())
+	      	browserHistory.push('/app/user/' + localStorage.getItem('id_auth'));
+	    });
+	}
+
+	onChange(i, value, tab, ev) {
+		//console.log(arguments);
 	}
 
 	onTabChange(i, value, tab, ev) {
@@ -56,7 +68,6 @@ class Test extends Component {
 		// eslint-disable-next-line
 		eval(codeToEval);
 	}
-	
 	
 	
 	render(){
