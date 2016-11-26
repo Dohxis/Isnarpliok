@@ -8,6 +8,7 @@ import Landing from './pages/Landing/Landing'
 import LangSelect from './pages/LangSelect/LangSelect'
 import Test from './pages/Test/Test'
 import User from './pages/User/User'
+import Stats from './pages/Stats/Stats'
 
 import store from './store'
 
@@ -54,6 +55,7 @@ class App extends Component {
             <Route path="app" component={ Master } store={store}>
                 <IndexRoute component={ Test } auth={auth} store={store} onEnter={restore_login}/>
                 <Route path="select" component={ LangSelect } store={store} onEnter={restore_login}/>
+                <Route path="stats" component={ Stats } store={store} onEnter={restore_login}/>
                 <Route path="user/:id" component={ User } store={store} onEnter={restore_login} />
             </Route>
             <Route path="/" component={ Landing } auth={auth} store={store} />
