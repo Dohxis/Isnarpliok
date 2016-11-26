@@ -14,3 +14,9 @@
 .completed-attribute{
 	float: right;
 }
+
+.history-prefix{
+	margin-right: 20px;
+	margin-left: 20px;
+	font-size: 20px;
+}

@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import { Image, Card, Button, Progress, Grid, Table, Header, Rating} from 'semantic-ui-react'
+import { Image, Card, Button, Progress, Grid, Table, Header, Rating, Menu, Segment} from 'semantic-ui-react'
 import { browserHistory } from 'react-router';
 import * as firebase from 'firebase';
-import "./User.css"
+import "./User.css";
 
 class User extends Component {
 	constructor(){
@@ -21,6 +21,35 @@ class User extends Component {
         });
 	}
 
+	getHistory(){
+		return(
+			<Table celled padded>
+				<Table.Header>
+					<Table.Row>
+					  <Table.HeaderCell singleLine>Evidence Rating</Table.HeaderCell>
+					  <Table.HeaderCell>Efficiency</Table.HeaderCell>
+					  <Table.HeaderCell>Language</Table.HeaderCell>
+					  <Table.HeaderCell>Task</Table.HeaderCell>
+					</Table.Row>
+				</Table.Header>
+				<Table.Body>
+					<Table.Row>
+					  <Table.Cell>
+						<Header as='h2' textAlign='center'>18/20</Header>
+					  </Table.Cell>
+					  <Table.Cell>
+						<Rating icon='star' rating={4} maxRating={5} />
+					  </Table.Cell>
+					  <Table.Cell singleLine>JavaScript</Table.Cell>
+					  <Table.Cell>
+						Create an application for simple addition and subtraction
+					  </Table.Cell>
+					</Table.Row>
+				</Table.Body>
+			</Table>
+		)
+	}
+
 	render(){
 		console.log(this.state.user_data);
 		var _this = this;
@@ -33,12 +62,11 @@ class User extends Component {
 							    <Grid.Row>
 							      <Grid.Column color="purple" width={2}>
 									  <center>
-										  <Image size='small' src={_this.state.user_data.identity? _this.state.user_data.identity.picture:
-											"http://67.media.tumblr.com/93415287687e9504db46b09d3bbf9498/tumblr_nwygrt2RtX1qiz1uyo1_1280.jpg"} />
+										  <Image size='small' src={_this.state.user_data.identity? _this.state.user_data.identity.picture:"/logo.png"} />
 									  </center>
 							      </Grid.Column>
 							      <Grid.Column width={13}>
-									  <b> <div className="user-name"> {_this.state.user_data.identity? _this.state.user_data.identity.nickname: "Undefined"} </div> </b>
+									  <b> <div className="user-name"> {_this.state.user_data.identity? _this.state.user_data.identity.nickname: "spaghetti"} </div> </b>
 									  <Progress color="purple" percent={30} active>
 									    	Level 7
 									  </Progress>
@@ -52,31 +80,12 @@ class User extends Component {
 				      </Card.Content>
 				    </Card>
 
-					<Table celled padded>
-				      <Table.Header>
-				        <Table.Row>
-				          <Table.HeaderCell singleLine>Evidence Rating</Table.HeaderCell>
-				          <Table.HeaderCell>Efficiency</Table.HeaderCell>
-						  <Table.HeaderCell>Language</Table.HeaderCell>
-				          <Table.HeaderCell>Task</Table.HeaderCell>
-				        </Table.Row>
-				      </Table.Header>
-
-				      <Table.Body>
-				        <Table.Row>
-				          <Table.Cell>
-				            <Header as='h2' textAlign='center'>18/20</Header>
-				          </Table.Cell>
-						  <Table.Cell>
-				            <Rating icon='star' rating={4} maxRating={5} />
-				          </Table.Cell>
-				          <Table.Cell singleLine>JavaScript</Table.Cell>
-				          <Table.Cell>
-				            Create an application for simple addition and subtraction
-				          </Table.Cell>
-				        </Table.Row>
-				      </Table.Body>
-				    </Table>
+					<Menu pointing>
+				        <Menu.Item className="history-prefix" name='history' active={true}/>
+			        </Menu>
+					<Segment>
+						{_this.getHistory()}
+					</Segment>
 				</div>
 			</div>
 		)
