@@ -82,6 +82,10 @@
 }
 
 
+.mui-tabs__pane{
+  overflow-y: scroll;
+  height: 79vh;
+}
 
 .dimmer > .content > .center{
 	padding-top: calc(50% - 70px);
