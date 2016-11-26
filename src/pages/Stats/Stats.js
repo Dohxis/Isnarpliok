@@ -2,15 +2,11 @@ import React, {Component} from 'react'
 import {observer} from 'mobx-react'
 import * as firebase from 'firebase'
 import {browserHistory} from 'react-router'
-import { Table, Grid, Icon } from 'semantic-ui-react'
+import { Table, Icon } from 'semantic-ui-react'
 
 
 @observer
 class Stats extends Component {
-	
-	constructor() {
-		super();
-	}
   
   componentWillMount(){
     const user = firebase.database().ref().child('users/' + localStorage.getItem('id_auth') + '/active');
