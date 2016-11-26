@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { Card, Icon, Image, Dimmer, Header, Segment, Grid, Message } from 'semantic-ui-react'
 import * as firebase from 'firebase';
+import { browserHistory } from 'react-router';
 
 class LangSelect extends Component {
 	
@@ -11,6 +12,7 @@ class LangSelect extends Component {
 	
 	start() {
 		firebase.database().ref().child('users/' + this.props.route.store.userID + '/active').set(true);
+		browserHistory.push('/app');
 	}
 	
 	render(){
@@ -19,8 +21,8 @@ class LangSelect extends Component {
 			<div>
 				
 				<Message info>
-    			<Message.Header>Was this what you wanted?</Message.Header>
-    			<p>Did you know its been a while?</p>
+    			<Message.Header>You have not started any lesson yet!</Message.Header>
+    			<p>Please choose a language below to begin learning</p>
   			</Message>
 				
 				<Grid centered>
@@ -29,7 +31,7 @@ class LangSelect extends Component {
 						<Grid.Column key='1' width='4' stretched>
 							<Dimmer.Dimmable as={Segment} onMouseEnter={this.handleShow} onMouseLeave={this.handleHide}>
 								<Dimmer active={active}>
-									<a href='#' onClick={this.start.bind(this)}>
+									<a onClick={this.start.bind(this)}>
 										<Header as='h2' icon inverted>
 											<Icon name='mail forward' />
 											Click to start

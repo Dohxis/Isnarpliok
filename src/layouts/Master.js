@@ -50,8 +50,8 @@ class Master extends Component {
         );
         const logo = (
             <span>
-                <Image avatar src="http://67.media.tumblr.com/93415287687e9504db46b09d3bbf9498/tumblr_nwygrt2RtX1qiz1uyo1_1280.jpg"/>
-                Isnarpliok
+                <Image avatar src="/logo.png"/>
+                DeNoodle
             </span>
         )
         var _this = this;
