@@ -1,7 +1,5 @@
 .land_logo{
     padding: 34px 43px;
-	font-size: 40px;
-	line-height: 40px;
 	color: #fff;
 }
 .land_particles-background > div{
@@ -10,7 +8,7 @@
 	left: 0;
 	top: 0;
 	width: 100vw;
-	height: 100vh;
+	/*height: 100vh;*/
 	z-index: -1;
 }
 .land_left{
@@ -64,12 +62,19 @@
 }
 .land_container{
 	width: 900px !important;
-    height: calc(100vh - 80px);
+    /*height: calc(100vh - 80px);*/
     background-color: rgba(0, 0, 0, 0.21);
-    margin-top: 40px;
+    /*margin-top: 40px;*/
     border-radius: 26px;
 }
-  
+.land_logo > img{
+	float: left;
+    margin-right: 10px;
+}
+.land_title{
+    font-size: 26px;
+    line-height: 35px;
+}
 
 
 
