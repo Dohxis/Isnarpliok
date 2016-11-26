@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {observer} from 'mobx-react'
 import * as firebase from 'firebase'
 import {browserHistory} from 'react-router'
+import { Grid, Image } from 'semantic-ui-react'
 
 @observer
 class Test extends Component {
@@ -17,7 +18,16 @@ class Test extends Component {
 	render(){
 		return (
 			<div>
-				IDE
+				<Grid columns={2}>
+					<Grid.Row>
+						<Grid.Column>
+							;kjshdkjfhskfjshf
+						</Grid.Column>
+						<Grid.Column>
+							asdasdasdasd
+						</Grid.Column>
+					</Grid.Row>
+				</Grid>
 			</div>
 		);
 	}
