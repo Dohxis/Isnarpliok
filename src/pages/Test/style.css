@@ -51,8 +51,9 @@
     transform: rotateZ(180deg); }
 
 .buttongroup_1{
-	padding-right: 5px !important;
-	padding-left: 5px !important;
+	margin-top: 5px !important;
+	margin-right: 10px !important;
+	margin-left: 10px !important;
 }
 
 ._blue {

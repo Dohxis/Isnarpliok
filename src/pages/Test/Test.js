@@ -83,6 +83,7 @@ class Test extends Component {
 								value={this.state.code}
 							/>
 						</Grid.Column>
+
 						<Grid.Column>
 							<Tabs onChange={this.onChange} initialSelectedIndex={0} justified>
 				        <Tab value="pane-1" label="Task" onActive={this.onActive}>
@@ -92,7 +93,7 @@ class Test extends Component {
 				        <Tab value="pane-2" label="Terminal">
                             <AceEditor
                                 width="100%"
-                                height="calc(100vh - 70px)"
+                                height="calc(100vh)"
                                 mode="javascript"
                                 theme="cobalt"
                                 fontSize={18}

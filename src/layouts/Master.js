@@ -66,6 +66,10 @@ class Master extends Component {
                         </div>
                     </Menu.Item>
 
+                    <Menu.Item className="menu-item" link>
+                        <Icon name="play" /> Run
+                    </Menu.Item>
+
                     <Menu.Item className="useris" position="right">
                         {trig}
                     </Menu.Item>

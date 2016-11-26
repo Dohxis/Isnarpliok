@@ -94,6 +94,7 @@
 
 .mui-tabs__pane{
   overflow-y: scroll;
+    overflow-x: hidden;
   height: 79vh;
 }
 
@@ -146,7 +147,8 @@
     color: white !important;
     display: table;
     width: 100%;
-    table-layout: fixed
+    table-layout: fixed;
+    overflow-x: hidden;
 }
 .mui-tabs__bar.mui-tabs__bar--justified>li {
     display: table-cell
