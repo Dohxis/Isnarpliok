@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Image, Card, Progress, Grid, Table, Header, Rating, Menu, Segment, Divider, Button, Icon } from 'semantic-ui-react'
-import * as firebase from 'firebase';
 import { browserHistory } from 'react-router';
+import * as firebase from 'firebase';
 import GithubActivity from '../../components/GithubActivity';
 import "./User.css";
 
@@ -26,35 +26,6 @@ class User extends Component {
 		});
 	}
 
-	getHistory(){
-		return(
-			<Table celled padded>
-				<Table.Header>
-					<Table.Row>
-					  <Table.HeaderCell singleLine>Evidence Rating</Table.HeaderCell>
-					  <Table.HeaderCell>Efficiency</Table.HeaderCell>
-					  <Table.HeaderCell>Language</Table.HeaderCell>
-					  <Table.HeaderCell>Task</Table.HeaderCell>
-					</Table.Row>
-				</Table.Header>
-				<Table.Body>
-					<Table.Row>
-					  <Table.Cell>
-						<Header as='h2' textAlign='center'>18/20</Header>
-					  </Table.Cell>
-					  <Table.Cell>
-						<Rating icon='star' rating={4} maxRating={5} />
-					  </Table.Cell>
-					  <Table.Cell singleLine>JavaScript</Table.Cell>
-					  <Table.Cell>
-						Create an application for simple addition and subtraction
-					  </Table.Cell>
-					</Table.Row>
-				</Table.Body>
-			</Table>
-		)
-	}
-
 	render(){
 		console.log(this.state.user_data);
 		var _this = this;
@@ -71,8 +42,8 @@ class User extends Component {
 								</Grid.Column>
 								<Grid.Column width={4}>
 									<div className="user-name"><b> {_this.state.user_data.identity? _this.state.user_data.identity.nickname: "spaghetti"}</b></div>
-									<div className="extra-attributes user-level"><Icon color="black" name="user empty star" /><b>Level </b> 3</div>
-									<div className="extra-attributes user-since"><Icon color="black" name="user checked calendar" /><b>User since </b> 2016-13-84 </div>
+									<div className="extra-attributes user-level"><Icon color="black" name="user empty star" /><b>Lygis </b> 3</div>
+									<div className="extra-attributes user-since"><Icon color="black" name="user checked calendar" /><b>Užsiregistravo </b> 2016-13-84 </div>
 								</Grid.Column>
 								<Grid.Column style={{marginTop: '20px'}} className="user_social-media" width={9}>
 									<GithubActivity />
@@ -84,25 +55,24 @@ class User extends Component {
 							<Grid.Row>
 								<Grid.Column width={4}>
 									<center><Image size="small" src="/js.png" /></center>
-									<Button onClick={this.continueCourse.bind(this)} className="user_continue" basic color='green'>Continue <b>JavaScript</b> course</Button>
+									<Button onClick={this.continueCourse.bind(this)} className="user_continue" basic color='green'>Tęsti <b>JavaScript</b> kursą</Button>
 								</Grid.Column>
 								<Grid.Column width={4}>
 									<center><Image className="image-grayscale" size="small" src="/python.png" /></center>
-									<Button disabled className="user_start-course" basic color='grey'>Start <b>Python</b> course</Button>
+									<Button disabled className="user_start-course" basic color='grey'>Pradėti <b>Python</b> kursą</Button>
 								</Grid.Column>
 								<Grid.Column width={4}>
 									<center><Image className="image-grayscale" size="small" src="/cpp.png" /></center>
-									<Button disabled className="user_start-course" basic color='grey'>Start <b>C++</b> course</Button>
+									<Button disabled className="user_start-course" basic color='grey'>Pradėti <b>C++</b> kursą</Button>
 								</Grid.Column>
 								<Grid.Column width={4}>
 									<center><Image className="image-grayscale" size="small" src="/java.png" /></center>
-									<Button disabled className="user_start-course" basic color='grey'>Start <b>Java</b> course</Button>
+									<Button disabled className="user_start-course" basic color='grey'>Pradėti <b>Java</b> kursą</Button>
 								</Grid.Column>
 							</Grid.Row>
 						</Grid>
 				  </Card.Content>
 				</Card>
-
 			</div>
 		)
 	}
