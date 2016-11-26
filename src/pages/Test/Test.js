@@ -23,7 +23,7 @@ class Test extends Component {
 
 	constructor() {
 		super();
-		this.state = { code: '', output: '' };
+		this.state = { code: '// ?', output: '' };
 	}
 
 	componentWillMount(){
