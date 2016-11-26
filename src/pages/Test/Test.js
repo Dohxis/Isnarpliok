@@ -30,7 +30,7 @@ class Test extends Component {
 	    const user = firebase.database().ref().child('users/' + localStorage.getItem('id_auth') + '/active');
 	    user.on('value', snap => {
 	      if(!snap.val())
-	      	browserHistory.push('/app/select');
+	      	browserHistory.push('/app/user/' + localStorage.getItem('id_auth'));
 	    });
 	}
 

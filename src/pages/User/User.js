@@ -66,7 +66,7 @@ class User extends Component {
 									<Button disabled className="user_start-course" basic color='grey'>Pradėti <b>C++</b> kursą</Button>
 								</Grid.Column>
 								<Grid.Column width={4}>
-									<center><Image className="image-grayscale" size="small" src="/java.png" /></center>
+									<center><Image className="image-grayscale" size="small" src="/Java.png" /></center>
 									<Button disabled className="user_start-course" basic color='grey'>Pradėti <b>Java</b> kursą</Button>
 								</Grid.Column>
 							</Grid.Row>
