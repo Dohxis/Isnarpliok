@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import { Image, Card, Button, Progress, Grid, Table, Header, Rating, Menu, Segment} from 'semantic-ui-react'
-import { browserHistory } from 'react-router';
+import { Image, Card, Progress, Grid, Table, Header, Rating, Menu, Segment} from 'semantic-ui-react'
 import * as firebase from 'firebase';
 import "./User.css";
 
