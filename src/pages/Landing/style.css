@@ -1,64 +1,79 @@
 .land_logo{
-    padding: 20px 40px;
-    font-size: 40px;
-    line-height: 40px;
-    border-bottom: 1px solid rgba(228, 228, 228, 0.79);
-    color: #fff;
+    padding: 34px 43px;
+	font-size: 40px;
+	line-height: 40px;
+	color: #fff;
 }
 .land_particles-background > div{
-    background-color: #202d3a;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
+	background-color: #202d3a;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: -1;
 }
 .land_left{
 	width: 50%;
 	float: left;
+	font-size: 22px;
+	padding: 0px 49px;
 }
 .land_right{
 	width: 50%;
 	float: right;
 }
+.land_left-inner,
+.land_right-inner{
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+}
 .land_content{
 	padding: 20px 0px;
-    font-size: 16px;
+	font-size: 16px;
 	color: #fff;
 }
 .land_start-learning{
 	clear: both;
-    margin: 0 auto;
-    width: 50%;
-    margin-top: 17px;
+	margin: 0 auto;
+	width: 50%;
+	margin-top: 17px;
 }
 .land_start-learning button{
-    margin: 0 auto;
-    width: 100%;
+	margin: 0 auto;
+	width: 100%;
 }
 .lang_clear{
 	clear: both;
 }
 .lang_images{
-    overflow: hidden;
+	overflow: hidden;
 }
 .lang_images .lang_images-row1{
-    margin-left: 70px;
-    width: 300px;
+	margin-left: 70px;
+	width: 300px;
 }
 .lang_images .lang_images-row1 img{
-    float: left;
-    margin: 0px 33px;
+	float: left;
+	margin: 0px 33px;
 }
 .lang_images .lang_images-row2 img{
-    float: left;
-    margin: 27px 31px;
+	float: left;
+	margin: 27px 31px;
 }
 .land_container{
 	width: 900px !important;
+    height: calc(100vh - 80px);
+    background-color: rgba(0, 0, 0, 0.21);
+    margin-top: 40px;
+    border-radius: 26px;
 }
-.land_left{
-    font-size: 22px;
-    padding: 0px 108px;
+  
+
+
+
+.dimmer > .content > .center{
+	padding-top: calc(50% - 70px);
+	vertical-align: unset !important;
 }
