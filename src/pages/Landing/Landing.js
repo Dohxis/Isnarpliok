@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Container, Header, Button, List } from 'semantic-ui-react';
+import { Container, Header, Button, List, Image } from 'semantic-ui-react';
 import Particles from 'react-particles-js';
 import './style.css';
 import { browserHistory } from 'react-router';
@@ -29,7 +29,7 @@ class Landing extends Component {
 	render(){
 		return (
 			<div className="land_main-container">
-				<Container>
+				<Container className="land_container">
 
 					<Header>
 						<div className="land_logo">
@@ -59,9 +59,20 @@ class Landing extends Component {
 							</List>
 						</div>
 						<div className="land_right">
-							Right content
+							<div className="lang_images">
+								<div className="lang_images-row1">
+									<Image width='80px' src='http://nodeframework.com/assets/img/js.png' />
+									<Image width='80px' src='https://www.sitepoint.com/wp-content/themes/sitepoint/assets/images/icon.php.png' />
+								</div>
+								<div className="lang_clear"></div>
+								<div className="lang_images-row2">
+									<Image width='80px' src='https://zeth.net/_images/500px-Python-logo-notext.svg.png' />
+									<Image width='90px' src='cpp.png' />
+									<Image width='90px' src='c.png' />
+								</div>
+							</div>
 							<div className="land_start-learning">
-								<Button onClick={this.login.bind(this)}>START LEARNING</Button>
+								<Button size="large" onClick={this.login.bind(this)}>START LEARNING</Button>
 							</div>
 						</div>
 					</div>

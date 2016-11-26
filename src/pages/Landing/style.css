@@ -23,7 +23,42 @@
 	float: right;
 }
 .land_content{
-	padding: 20px 100px;
-	font-size: 20px;
+	padding: 20px 0px;
+    font-size: 16px;
 	color: #fff;
+}
+.land_start-learning{
+	clear: both;
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 17px;
+}
+.land_start-learning button{
+    margin: 0 auto;
+    width: 100%;
+}
+.lang_clear{
+	clear: both;
+}
+.lang_images{
+    overflow: hidden;
+}
+.lang_images .lang_images-row1{
+    margin-left: 70px;
+    width: 300px;
+}
+.lang_images .lang_images-row1 img{
+    float: left;
+    margin: 0px 33px;
+}
+.lang_images .lang_images-row2 img{
+    float: left;
+    margin: 27px 31px;
+}
+.land_container{
+	width: 900px !important;
+}
+.land_left{
+    font-size: 22px;
+    padding: 0px 108px;
 }
