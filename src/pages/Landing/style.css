@@ -81,6 +81,16 @@
     line-height: 35px;
 }
 
+.land_particles-background{
+    background-image: url('/land_background.jpg');
+    height: 100vh;
+    background-size: cover;
+}
+.land_particles-background > div{
+    background-color: rgba(32, 45, 58, 0.43);
+    height: 100vh;
+}
+
 
 .mui-tabs__pane{
   overflow-y: scroll;
@@ -124,12 +134,16 @@
     text-decoration: none
 }
 .mui-tabs__bar>li.mui--is-active {
-    border-bottom: 2px solid #2196F3
+    background-color: rgb(255, 130, 46) !important;
+    color: #2196F3 !important;
 }
 .mui-tabs__bar>li.mui--is-active>a {
-    color: #2196F3
+    color: #2196F3 !important;
 }
 .mui-tabs__bar.mui-tabs__bar--justified {
+    margin-top: 0 !important;
+    background-color: rgb(162, 84, 33) !important;
+    color: white !important;
     display: table;
     width: 100%;
     table-layout: fixed
@@ -140,8 +154,15 @@
 .mui-tabs__bar.mui-tabs__bar--justified>li>a {
     text-align: center;
     padding-left: 0;
-    padding-right: 0
+    padding-right: 0;
+    color: white !important;
 }
+
+.column {
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+
 .mui-tabs__pane {
     display: none
 }

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Card, Menu, Input, Dropdown, Image, Icon} from 'semantic-ui-react';
+import { Menu, Image, Icon} from 'semantic-ui-react';
 import "./Master.css";
 import {browserHistory} from "react-router";
 import {observer} from 'mobx-react'
@@ -16,7 +16,7 @@ class Master extends Component {
     sideToggle(e){
         var _this = this;
         this.setState({
-            sideToggle: this.state.sideToggle == "animating"? 'visible animating' : "animating"
+            sideToggle: this.state.sideToggle === "animating"? 'visible animating' : "animating"
             }
         );
     }

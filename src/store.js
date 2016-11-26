@@ -4,6 +4,7 @@ class Store {
     @observable userID = "";
     @observable loggedIn = false;
     @observable user = {};
+    @observable code = '';
 
     login(user, id, first = false){
         this.userID = id;
@@ -19,7 +20,10 @@ class Store {
         this.user = {};
         localStorage.removeItem('id_auth');
     }
-
+    
+    updateCode(...code) {
+      this.code += code + '\n';
+    }
 }
 
 // eslint-disable-next-line
