@@ -35,6 +35,7 @@ class Landing extends Component {
 						<div className="land_logo">
 							<Image style={{width:'64px'}} size="small" src="/logo_white.png" />
 							<div className="land_title">Išnarpliok</div>
+							<div className="slogan_">MOKYKIS . RUOŠKIS. TOBULĖK</div>
 						</div>
 					</Header>
 
@@ -62,7 +63,7 @@ class Landing extends Component {
 									<Image src="/tolyn.png" width="64px" style={{marginLeft: '100px', marginTop: '-30px'}} /> <h3 style={{marginBottom: '40px', width: '250px', textAlign: 'center', marginTop: '2px'}}>TOBULĖK PROGRAMAVIME KARTU SU MUMIS!</h3>
 								</div>
 								<div style={{marginTop: '40px', width: '300px'}} className="land_start-learning">
-									<Button color="orange" size="large" onClick={this.login.bind(this)}>PRADĖK MOKINTIS DABAR</Button>
+									<Button color="orange" size="large" onClick={this.login.bind(this)}>PRADĖK MOKYTIS DABAR</Button>
 								</div>
 								<div className="lang_images">
 									<div className="lang_images-row1">
