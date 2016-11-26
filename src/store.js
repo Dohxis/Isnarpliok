@@ -21,7 +21,7 @@ class Store {
         localStorage.removeItem('id_auth');
     }
     
-    updateCode(code) {
+    updateCode(...code) {
       this.code += code + '\n';
     }
 }

@@ -4,3 +4,15 @@
 .ide-grid-row0{
 	padding-bottom: 0 !important;
 }
+.buttongroup_1{
+	padding-right: 5px !important;
+	padding-left: 5px !important;
+}
+
+._blue {
+	background: rgb(162, 84, 33) !important;
+}
+
+._mint {
+	background: rgb(255, 130, 46) !important;
+}

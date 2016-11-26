@@ -45,11 +45,8 @@ class Test extends Component {
 	}
 	
 	onRun() {
-		var codeToEval = this.state.code;
-		
-		codeToEval = codeToEval.replace(/console.log/g, "window.store.updateCode");
-		
-		window.store.code = '';
+		var codeToEval = this.state.code.replace(/console.log/g, "window.store.updateCode");
+		this.props.route.store.code = '';
 		eval(codeToEval);
 	}
 	
@@ -68,7 +65,6 @@ class Test extends Component {
 								width="100%"
 								height="calc(100vh - 70px)"
 								mode="javascript"
-								theme="github"
 								onChange={this.onCodeChange.bind(this)}
 								theme="cobalt"
                                 fontSize={18}
@@ -77,6 +73,7 @@ class Test extends Component {
 								name="46512546"
 								editorProps={{$blockScrolling: true}}
 								className="code-editor"
+								value={this.state.code}
 							/>
 						</Grid.Column>
 						<Grid.Column>
@@ -100,16 +97,13 @@ class Test extends Component {
 									<p>
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris eleifend, quam a vulputate dictum, massa quam dapibus leo, eget vulputate orci purus ut lorem. In fringilla mi in ligula. Pellentesque aliquam quam vel dolor. Nunc adipiscing. Sed quam odio, tempus ac, aliquam molestie, varius ac, tellus. Vestibulum ut nulla aliquam risus rutrum interdum. Pellentesque lorem. Curabitur sit amet erat quis risus feugiat viverra. Pellentesque augue justo, sagittis et, lacinia at, venenatis non, arcu. Nunc nec libero. In cursus dictum risus. Etiam tristique nisl a nulla. Ut a orci. Curabitur dolor nunc, egestas at, accumsan at, malesuada nec, magna.
 									</p>
-									<Grid columns={2}>
-										<Grid.Row className="ide-grid-row0">
-											<Grid.Column>
-												<Button fluid color='green' onClick={this.onRun.bind(this)}>Run</Button>
-											</Grid.Column>
-											<Grid.Column>
-												<Button fluid color='yellow' onClick={this.onSubmit.bind(this)}>Submit</Button>
-											</Grid.Column>
-										</Grid.Row>
-									</Grid>
+
+                            <Button.Group fluid className="buttongroup_1">
+                                <Button color="green" onClick={this.onRun.bind(this)}>Run</Button>
+                                <Button.Or />
+                                <Button color="teal" onClick={this.onSubmit.bind(this)}>Submit</Button>
+                            </Button.Group>
+
 								</Tab>
 				        <Tab value="pane-2" label="Terminal">
                             <AceEditor
@@ -120,7 +114,8 @@ class Test extends Component {
                                 fontSize={18}
                                 showPrintMargin={true}
                                 highlightActiveLine={true}
-                                name="46512546"
+                                name="new"
+                                showGutter={false}
                                 editorProps={{$blockScrolling: true}}
                                 className="code-editor"
                                 readOnly={true}
