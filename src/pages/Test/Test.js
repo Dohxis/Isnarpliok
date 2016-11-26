@@ -93,7 +93,7 @@ class Test extends Component {
 								value={this.state.code}
 							/>
 							
-							<Button color='green' onClick={this.runCode.bind(this)} style={{ position: 'absolute', top: '10px', right: '10px', zIndex: '999' }}>
+							<Button color='green' onClick={this.runCode.bind(this)} style={{ position: 'absolute', top: '7px', right: '7px', zIndex: '999', marginRight: '0' }}>
 								<Icon name='play' />
 								Vykdyti
 							</Button>
@@ -122,6 +122,7 @@ class Test extends Component {
 										className="code-editor"
 										readOnly={true}
 										value={this.props.route.store.code}
+										style={{paddingTop: '13px'}}
 									/>
 								</Tab>
 								
