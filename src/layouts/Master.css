@@ -18,3 +18,9 @@
 .menu-item-text{
 	text-align: center;
 }
+.master_white-logo{
+	border-radius: 0px !important;
+}
+.mui-tabs__bar.mui-tabs__bar--justified>li>a{
+	cursor: pointer !important;
+}

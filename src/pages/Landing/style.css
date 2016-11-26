@@ -98,11 +98,19 @@
     height: 100vh;
 }
 
+.white_link{
+    font-size: 20px;
+    line-height: 20px;
+}
 
 .mui-tabs__pane{
-  overflow-y: scroll;
+  overflow-y: hidden;
     overflow-x: hidden;
-  height: 79vh;
+  height: 85vh;
+}
+
+body {
+    overflow: hidden;
 }
 
 .dimmer > .content > .center{

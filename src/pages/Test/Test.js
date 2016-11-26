@@ -4,7 +4,6 @@ import * as firebase from 'firebase'
 import {browserHistory} from 'react-router'
 import { Grid, Button, Icon } from 'semantic-ui-react'
 import './style.css';
-import $ from 'jquery';
 
 import AceEditor from 'react-ace';
 
@@ -23,7 +22,17 @@ class Test extends Component {
 
 	constructor() {
 		super();
-		this.state = { code: '', output: '' };
+		this.state = { code: '// ?', output: '', lvl: '' };
+	}
+
+	componentWillMount(){
+			const user = firebase.database().ref().child('users/' + localStorage.getItem('id_auth') + '/active');
+			user.on('value', snap => {
+				if(!snap.val())
+					browserHistory.push('/app/select');
+			});
+			
+			this.lvl = firebase.database().ref().child('users/' + localStorage.getItem('id_auth') + '/level');
 	}
 
 	componentWillMount(){
@@ -35,8 +44,7 @@ class Test extends Component {
 	}
 
 	onChange(i, value, tab, ev) {
-		console.log(arguments);
-
+		//console.log(arguments);
 	}
 
 	onTabChange(i, value, tab, ev) {
@@ -51,7 +59,7 @@ class Test extends Component {
 		 // eslint-disable-next-line
 		this.state.code = newValue;
 	}
-
+	
 	runCode() {
 		var codeToEval = this.state.code.replace(/console.log/g, "window.store.updateCode");
 		this.props.route.store.code = '';
@@ -60,14 +68,15 @@ class Test extends Component {
 		// eslint-disable-next-line
 		eval(codeToEval);
 	}
-
+	
+	
 	render(){
 		
 		return (
 			<div>
 				<Grid columns={2}>
 					<Grid.Row className="ide-grid-row0">
-						<Grid.Column>
+						<Grid.Column style={{ position: 'relative', borderRight: 'solid thick #A25421' }} width={10}>
 							
 							<AceEditor
 								width="100%"
@@ -76,25 +85,32 @@ class Test extends Component {
 								onChange={this.onCodeChange.bind(this)}
 								theme="cobalt"
 								fontSize={18}
-								showPrintMargin={true}
+								showPrintMargin={false}
 								highlightActiveLine={true}
 								name="46512546"
 								editorProps={{$blockScrolling: true}}
 								className="code-editor"
 								value={this.state.code}
 							/>
+							
+							<Button color='green' onClick={this.runCode.bind(this)} style={{ position: 'absolute', top: '7px', right: '7px', zIndex: '999', marginRight: '0' }}>
+								<Icon name='play' />
+								Vykdyti
+							</Button>
+							
 						</Grid.Column>
-						<Grid.Column>
+						<Grid.Column width={6}  style={{ borderStyle: 'none', borderLeft: 'solid #A25421' }}>
 							<Tabs onChange={this.onTabChange} initialSelectedIndex={0} justified>
 								
 								<Tab value="pane-1" label="Task" onActive={this.onTabActive}>
-									<Tasks/>
+									
+									
 								</Tab>
 								
 								<Tab value="pane-2 notGeneric" label="Terminal" id='terminal' className='notGeneric'>
 									<AceEditor
 										width="100%"
-										height="calc(100vh - 70px)"
+										height="100vh"
 										mode="javascript"
 										theme="cobalt"
 										fontSize={18}
@@ -106,6 +122,7 @@ class Test extends Component {
 										className="code-editor"
 										readOnly={true}
 										value={this.props.route.store.code}
+										style={{paddingTop: '13px'}}
 									/>
 								</Tab>
 								
