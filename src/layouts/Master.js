@@ -42,10 +42,10 @@ class Master extends Component {
         const trig = (
             <span>
                 <Image avatar
-                    src={this.props.route.store.user.picture?
-                        this.props.route.store.user.picture:
+                    src={this.props.route.store.user.identity ?
+                        this.props.route.store.user.identity.picture :
                         "https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg"} />
-                {this.props.route.store.user.nickname}
+                {this.props.route.store.user.identity ? this.props.route.store.user.identity.nickname : ""}
             </span>
         );
         const logo = (

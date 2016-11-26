@@ -5,7 +5,11 @@ import {observer} from 'mobx-react'
 class Test extends Component {
 
 	componentWillMount(){
-
+		if(this.props.route.store.user.active){
+			console.log("hey");
+		} else {
+			console.log("lol");
+		}
 	}
 
 	render(){
