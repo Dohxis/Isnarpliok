@@ -58,19 +58,21 @@ class User extends Component {
 			      <Card.Content className="card-prefix">
 					  	<Grid columns={2}>
 						    <Grid.Row>
-						        <Grid.Column width={2}>
+						        <Grid.Column width={3}>
 								    <center>
 								     	<Image className="user_image" size='small' src={_this.state.user_data.identity? _this.state.user_data.identity.picture:"/logo.png"} />
 								    </center>
 						        </Grid.Column>
-								<Grid.Column width={7}>
+								<Grid.Column width={4}>
 									<div className="user-name"><b> {_this.state.user_data.identity? _this.state.user_data.identity.nickname: "spaghetti"}</b></div>
 									<div className="extra-attributes user-level"> <b> Level: </b> 3</div>
 									<div className="extra-attributes user-since"> <b> User since: </b> 2016-13-84 </div>
 									<div className="extra-attributes completed-attribute"> <b> Completed: </b> 9001+ </div>
 								</Grid.Column>
-								<Grid.Column width={6}>
-									
+								<Grid.Column className="user_social-media" width={9}>
+									<Image size="small" src="/facebook.png" />
+									<Image size="small" src="/twitter.png" />
+									<Image size="small" src="/github.png" />
 								</Grid.Column>
 						    </Grid.Row>
 						</Grid>
