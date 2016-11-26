@@ -40,8 +40,8 @@ class Master extends Component {
 
     render(){
         const trig = (
-            <span>
-                <Image avatar
+            <span className="ui image massive label special_l">
+                <Image
                     src={this.props.route.store.user.identity ?
                         this.props.route.store.user.identity.picture :
                         "https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg"} />
