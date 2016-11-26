@@ -21,7 +21,7 @@ class Test extends Component {
 				<Grid columns={2}>
 					<Grid.Row>
 						<Grid.Column>
-							;kjshdkjfhskfjshf
+							kjshdkjfhskfjshf
 						</Grid.Column>
 						<Grid.Column>
 							asdasdasdasd
