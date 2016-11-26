@@ -1,17 +1,16 @@
 import React, {Component} from 'react';
-import { Image, Icon } from 'semantic-ui-react'
-import * as firebase from 'firebase';
+import { Icon } from 'semantic-ui-react'
 import Collapsible from 'react-collapsible';
 import tasks_data from './RawTasks.js';
 
 class Tasks extends Component {
 	constructor(){
-	   super();
-	   this.state = {
-		   active: 0,
-		   tasks: [{id: 0, comp: false}, {id: 1, comp: false}, {id: 2, comp: false}],
-		   task_data: tasks_data
-	   }
+		 super();
+		 this.state = {
+			 active: 0,
+			 tasks: [{id: 0, comp: false}, {id: 1, comp: false}, {id: 2, comp: false}],
+			 task_data: tasks_data
+		 }
 	}
 
 	render(){
