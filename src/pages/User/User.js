@@ -1,23 +1,29 @@
 import React, {Component} from 'react';
-import { Image, Card, Progress, Grid, Table, Header, Rating, Menu, Segment, Divider } from 'semantic-ui-react'
+import { Image, Card, Progress, Grid, Table, Header, Rating, Menu, Segment, Divider, Button, Icon } from 'semantic-ui-react'
 import * as firebase from 'firebase';
+import { browserHistory } from 'react-router';
+import GithubActivity from '../../components/GithubActivity';
 import "./User.css";
 
 class User extends Component {
 	constructor(){
-       super();
-       this.state = {
-           user_data: {}
-       }
-    }
+	   super();
+	   this.state = {
+		   user_data: {}
+	   }
+	}
+
+	continueCourse() {
+		browserHistory.push('/app');
+	}
 
 	componentDidMount(){
-        const user = firebase.database().ref().child('users/' + this.props.params.id);
-        user.on('value', snap => {
-            this.setState({
-                user_data: snap.val()
-            });
-        });
+		const user = firebase.database().ref().child('users/' + this.props.params.id);
+		user.on('value', snap => {
+			this.setState({
+				user_data: snap.val()
+			});
+		});
 	}
 
 	getHistory(){
@@ -55,49 +61,47 @@ class User extends Component {
 		return (
 			<div className="App">
 				<Card fluid className="user_fluid">
-			      <Card.Content className="card-prefix">
-					  	<Grid columns={2}>
-						    <Grid.Row>
-						        <Grid.Column width={3}>
-								    <center>
-								     	<Image className="user_image" size='small' src={_this.state.user_data.identity? _this.state.user_data.identity.picture:"/logo.png"} />
-								    </center>
-						        </Grid.Column>
-								<Grid.Column width={6}>
+				  <Card.Content className="card-prefix">
+						<Grid columns={2}>
+							<Grid.Row>
+								<Grid.Column width={3}>
+									<center>
+										<Image className="user_image" size='small' src={_this.state.user_data.identity? _this.state.user_data.identity.picture:"/logo.png"} />
+									</center>
+								</Grid.Column>
+								<Grid.Column width={4}>
 									<div className="user-name"><b> {_this.state.user_data.identity? _this.state.user_data.identity.nickname: "spaghetti"}</b></div>
-									<div className="extra-attributes user-level"> <b> Level: </b> 3</div>
-									<div className="extra-attributes user-since"> <b> User since: </b> 2016-13-84 </div>
-									<div className="extra-attributes completed-attribute"> <b> Completed: </b> 9001+ </div>
+									<div className="extra-attributes user-level"><Icon color="black" name="user empty star" /><b>Level </b> 3</div>
+									<div className="extra-attributes user-since"><Icon color="black" name="user checked calendar" /><b>User since </b> 2016-13-84 </div>
 								</Grid.Column>
-								<Grid.Column className="user_social-media" width={7}>
-									<Image size="small" src="/facebook.png" />
-									<Image size="small" src="/twitter.png" />
-									<Image size="small" src="/github.png" />
+								<Grid.Column style={{marginTop: '20px'}} className="user_social-media" width={9}>
+									<GithubActivity />
 								</Grid.Column>
-						    </Grid.Row>
+							</Grid.Row>
 						</Grid>
 						<Divider />
-					  	<Grid columns={3} className="user_languages">
-						    <Grid.Row>
-						        <Grid.Column width={5}>
-						        	<center><Image size="small" src="/js.png" /></center>
-						        	<h2>JavaScript</h2>
-						        	<h3>6/20</h3>
-						        </Grid.Column>
-								<Grid.Column width={5}>
-						        	<center><Image size="small" src="/php.png" /></center>
-						        	<h2>PHP</h2>
-						        	<h3>Not started</h3>
+						<Grid columns={4} className="user_languages">
+							<Grid.Row>
+								<Grid.Column width={4}>
+									<center><Image size="small" src="/js.png" /></center>
+									<Button onClick={this.continueCourse.bind(this)} className="user_continue" basic color='green'>Continue <b>JavaScript</b> course</Button>
 								</Grid.Column>
-						        <Grid.Column width={5}>
-						        	<center><Image size="small" src="/python.png" /></center>
-						        	<h2>Python</h2>
-						        	<h3>Not started</h3>
-						        </Grid.Column>
-						    </Grid.Row>
+								<Grid.Column width={4}>
+									<center><Image className="image-grayscale" size="small" src="/python.png" /></center>
+									<Button disabled className="user_start-course" basic color='grey'>Start <b>Python</b> course</Button>
+								</Grid.Column>
+								<Grid.Column width={4}>
+									<center><Image className="image-grayscale" size="small" src="/cpp.png" /></center>
+									<Button disabled className="user_start-course" basic color='grey'>Start <b>C++</b> course</Button>
+								</Grid.Column>
+								<Grid.Column width={4}>
+									<center><Image className="image-grayscale" size="small" src="/java.png" /></center>
+									<Button disabled className="user_start-course" basic color='grey'>Start <b>Java</b> course</Button>
+								</Grid.Column>
+							</Grid.Row>
 						</Grid>
-			      </Card.Content>
-			    </Card>
+				  </Card.Content>
+				</Card>
 
 			</div>
 		)
@@ -110,8 +114,8 @@ export default User;
 /*
 
 				<Menu pointing>
-			        <Menu.Item className="history-prefix" name='history' active={true}/>
-		        </Menu>
+					<Menu.Item className="history-prefix" name='history' active={true}/>
+				</Menu>
 				<Segment>
 					{_this.getHistory()}
 				</Segment>
