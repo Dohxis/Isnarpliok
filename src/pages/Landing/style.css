@@ -17,13 +17,13 @@
     overflow: hidden;
 }
 .land_left{
-	width: 50%;
+	width: 60%;
 	float: left;
 	font-size: 22px;
 	padding: 0px 49px;
 }
 .land_right{
-	width: 50%;
+	width: 40%;
 	float: right;
 }
 .land_left-inner,
@@ -33,7 +33,7 @@
     position: absolute;
 }
 .land_content{
-	padding: 20px 0px;
+	padding: 0;
 	font-size: 16px;
 	color: #fff;
 }
@@ -47,15 +47,21 @@
 	margin: 0 auto;
 	width: 100%;
 }
+
+.fcklist {
+    padding-left: 100px !important;
+}
+
 .lang_clear{
 	clear: both;
 }
 .lang_images{
 	overflow: hidden;
+    margin-top: 50px;
 }
 .lang_images .lang_images-row1{
-	margin-left: 70px;
-	width: 300px;
+	margin-left: 110px;
+	width: 100%;
 }
 .lang_images .lang_images-row1 img{
 	float: left;
@@ -68,7 +74,7 @@
 .land_container{
 	width: 900px !important;
     height: calc(100vh - 80px);
-    background-color: rgba(0, 0, 0, 0.21);
+    background-color: rgba(0, 0, 0, 0.65);
     /*margin-top: 40px;*/
     border-radius: 26px;
 }
@@ -77,12 +83,13 @@
     margin-right: 10px;
 }
 .land_title{
-    font-size: 26px;
-    line-height: 35px;
+    font-size: 40px;
+    line-height: 45px;
 }
 
 .land_particles-background{
     background-image: url('/land_background.jpg');
+    filter: blur(8px);
     height: 100vh;
     background-size: cover;
 }
@@ -170,4 +177,10 @@
 }
 .mui-tabs__pane.mui--is-active {
     display: block
+}
+
+.slogan_ {
+    font-size: 8px;
+    margin-left: 100px !important;
+    margin-bottom: 30px;
 }
