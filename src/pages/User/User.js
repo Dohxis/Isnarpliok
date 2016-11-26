@@ -1,15 +1,17 @@
 import React, {Component} from 'react';
-import { Image, Card, Progress, Grid, Table, Header, Rating, Menu, Segment, Divider, Button, Icon } from 'semantic-ui-react'
+import { Card, Grid, Divider, Icon } from 'semantic-ui-react'
 import { browserHistory } from 'react-router';
 import * as firebase from 'firebase';
 import GithubActivity from '../../components/GithubActivity';
 import "./User.css";
+import { Button, Header, Image, Modal } from 'semantic-ui-react'
 
 class User extends Component {
 	constructor(){
 	   super();
 	   this.state = {
-		   user_data: {}
+		   user_data: {},
+		   active: true
 	   }
 	}
 
@@ -26,11 +28,28 @@ class User extends Component {
 		});
 	}
 
+	showModal(){
+		if(this.state.active)
+			return (<Modal open={true}>
+			<Modal.Header>Select a Photo</Modal.Header>
+			<Modal.Content image>
+				<Image wrapped size='medium' src='http://semantic-ui.com/images/avatar2/large/rachel.png' />
+				<Modal.Description>
+					<Header>Default Profile Image</Header>
+					<p>We've found the following gravatar image associated with your e-mail address.</p>
+					<p>Is it okay to use this photo?</p>
+				</Modal.Description>
+			</Modal.Content>
+		</Modal>);
+	}
+
 	render(){
-		console.log(this.state.user_data);
+
 		var _this = this;
 		return (
 			<div className="App">
+				{this.showModal.bind(this)}
+				<Modal ref="OutlineModel">Hello</Modal>
 				<Card fluid className="user_fluid">
 				  <Card.Content className="card-prefix">
 						<Grid columns={2}>
