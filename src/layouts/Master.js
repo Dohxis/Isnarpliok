@@ -20,7 +20,7 @@ class Master extends Component {
     }
 
     router_user(){
-        browserHistory.push('/app/user')
+        browserHistory.push('/app/user/' + this.props.route.store.userID)
     }
 
     router_home(){
