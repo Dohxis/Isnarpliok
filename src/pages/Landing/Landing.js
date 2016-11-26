@@ -31,55 +31,47 @@ class Landing extends Component {
 			<div className="land_main-container">
 				<Container className="land_container">
 
-					<Header>
+					<Header style={{marginBottom: '10px'}}>
 						<div className="land_logo">
-							<Image size="mini" src="/logo_white.png" />
-							<div className="land_title">Denoodle</div>
+							<Image style={{width:'64px'}} size="small" src="/logo_white.png" />
+							<div className="land_title">Išnarpliok</div>
 						</div>
 					</Header>
 
 					<div className="land_content">
-						<div className="land_left">
-							<div className="land_left-inner">
-								<List>
+
+								<List className="fcklist land_left" style={{marginBottom: '0px'}}>
 									<List.Item>
-										<List.Icon name='square outline' />
-										<List.Content>Lorem ipsum dolor sit amet</List.Content>
+										<List.Icon name='checkmark box' />
+										<List.Content>Patogi programavimo mokymosi platforma</List.Content>
 									</List.Item>
 									<List.Item>
-										<List.Icon name='square outline' />
-										<List.Content>Eum te gubergren vulputate</List.Content>
+										<List.Icon name='checkmark box' />
+										<List.Content>Pasiruošimas programavimo brandos egzaminui</List.Content>
 									</List.Item>
 									<List.Item>
-										<List.Icon name='square outline' />
-										<List.Content>Iuvaret accusam aliquando</List.Content>
+										<List.Icon name='checkmark box' />
+										<List.Content>Programavimo žinių gilinimas ir pritaikymas</List.Content>
 									</List.Item>
 									<List.Item>
-										<List.Icon name='square outline' />
-										<List.Content>Labore vocent theophrastus</List.Content>
+										<List.Icon name='checkmark box' />
+										<List.Content>Susipažinimas su naujomis technologijomis</List.Content>
 									</List.Item>
 								</List>
-							</div>
-						</div>
-						<div className="land_right">
-							<div className="land_right-inner">
+								<div style={{marginLeft: '0px'}} className="land_right">
+									<Image src="/tolyn.png" width="64px" style={{marginLeft: '100px', marginTop: '-30px'}} /> <h3 style={{marginBottom: '40px', width: '250px', textAlign: 'center', marginTop: '2px'}}>TOBULĖK PROGRAMAVIME KARTU SU MUMIS!</h3>
+								</div>
+								<div style={{marginTop: '40px', width: '300px'}} className="land_start-learning">
+									<Button color="orange" size="large" onClick={this.login.bind(this)}>PRADĖK MOKINTIS DABAR</Button>
+								</div>
 								<div className="lang_images">
 									<div className="lang_images-row1">
-										<Image width='80px' src='/js.png' />
-										<Image width='80px' src='/php.png' />
-									</div>
-									<div className="lang_clear"></div>
-									<div className="lang_images-row2">
-										<Image width='80px' src='/python.png' />
-										<Image width='84px' src='/cpp.png' />
-										<Image width='84px' src='/c.png' />
+										<Image width='100px' src='/js.png' />
+										<Image width='100px' src='/python.png' />
+										<Image width='100px' src='/cpp.png' />
+										<Image width='100px' src='/Java.png' />
 									</div>
 								</div>
-								<div className="land_start-learning">
-									<Button size="large" onClick={this.login.bind(this)}>START LEARNING</Button>
-								</div>
-							</div>
-						</div>
 					</div>
 
 					<div className="land_particles-background">
