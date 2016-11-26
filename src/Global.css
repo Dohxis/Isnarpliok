@@ -16,8 +16,38 @@
     text-align: center;
 }
 
+.right.item::before {
+    background: rgba(255,255,255,0) !important;
+}
+
 .menu-item {
     justify-content: center;
+}
+
+.special_l {
+    border-radius: 20px !important;
+    background-color: #3B3F4C !important;
+
+    height: 55px !important;
+    padding-top: 15px !important;
+}
+
+.special_l >  .white_link > img {
+    padding : 4px;
+    border-radius: 20px !important;
+}
+
+.icon_l {
+    margin-right: 0 !important;
+    margin-left: 10px !important;
+}
+
+.white_link {
+    opacity: 1 !important;
+}
+
+.white_link :hover {
+    opacity: .5 !important;
 }
 
 .menu-item-first {
