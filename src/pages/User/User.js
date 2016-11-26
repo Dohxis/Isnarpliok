@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { Image, Card, Progress, Grid, Table, Header, Rating, Menu, Segment} from 'semantic-ui-react'
+import { Image, Card, Button, Progress, Grid, Table, Header, Rating, Menu, Segment} from 'semantic-ui-react'
+import { browserHistory } from 'react-router';
 import * as firebase from 'firebase';
 import "./User.css";
 
@@ -25,9 +26,9 @@ class User extends Component {
 			<Table celled padded>
 				<Table.Header>
 					<Table.Row>
-					  <Table.HeaderCell singleLine>Evidence Rating</Table.HeaderCell>
-					  <Table.HeaderCell>Efficiency</Table.HeaderCell>
-					  <Table.HeaderCell>Language</Table.HeaderCell>
+					  <Table.HeaderCell singleLine>Completion</Table.HeaderCell>
+					  <Table.HeaderCell singleLine>Rating</Table.HeaderCell>
+					  <Table.HeaderCell singleLine>Language</Table.HeaderCell>
 					  <Table.HeaderCell>Task</Table.HeaderCell>
 					</Table.Row>
 				</Table.Header>
@@ -80,7 +81,7 @@ class User extends Component {
 				    </Card>
 
 					<Menu pointing>
-				        <Menu.Item className="history-prefix" name='history' active={true}/>
+				        <Menu.Item className="history-prefix" name='courses' active={true}/>
 			        </Menu>
 					<Segment>
 						{_this.getHistory()}
