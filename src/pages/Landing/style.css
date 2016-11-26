@@ -84,7 +84,7 @@
 }
 .land_title{
     font-size: 40px;
-    line-height: 60px;
+    line-height: 45px;
 }
 
 .land_particles-background{
@@ -177,4 +177,10 @@
 }
 .mui-tabs__pane.mui--is-active {
     display: block
+}
+
+.slogan_ {
+    font-size: 8px;
+    margin-left: 100px !important;
+    margin-bottom: 30px;
 }
