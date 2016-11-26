@@ -2,36 +2,42 @@ import React, {Component} from 'react'
 import {observer} from 'mobx-react'
 import * as firebase from 'firebase'
 import {browserHistory} from 'react-router'
-import { Button } from 'semantic-ui-react'
-
-import { Grid } from 'semantic-ui-react'
+import { Grid, Button, Image, TextArea } from 'semantic-ui-react'
 import './style.css';
 
+import brace from 'brace';
 import AceEditor from 'react-ace';
 
+import 'brace/mode/java';
+import 'brace/theme/github';
 import 'brace/mode/javascript';
 import 'brace/theme/cobalt';
 
 import Tabs from 'muicss/lib/react/tabs';
 import Tab from 'muicss/lib/react/tab';
 
+import Tasks from "./Tasks.js";
 
 @observer
 class Test extends Component {
-	
+
 	constructor() {
 		super();
 		this.state = { code: '', output: '' };
 	}
-	
+
 	componentWillMount(){
-    const user = firebase.database().ref().child('users/' + localStorage.getItem('id_auth') + '/active');
-    user.on('value', snap => {
-      if(!snap.val())
-      	browserHistory.push('/app/select');
-    });
+	    const user = firebase.database().ref().child('users/' + localStorage.getItem('id_auth') + '/active');
+	    user.on('value', snap => {
+	      if(!snap.val())
+	      	browserHistory.push('/app/select');
+	    });
 	}
-	
+
+	onChange(i, value, tab, ev) {
+		console.log(arguments);
+	}
+
 	onTabChange(i, value, tab, ev) {
 		//console.log(arguments);
 	}
@@ -39,22 +45,23 @@ class Test extends Component {
 	onTabActive(tab) {
 		//console.log(arguments);
 	}
-	
+
 	onCodeChange(newValue) {
 		this.state.code = newValue;
 	}
-	
+
 	onRun() {
 		var codeToEval = this.state.code.replace(/console.log/g, "window.store.updateCode");
 		this.props.route.store.code = '';
 		eval(codeToEval);
 	}
-	
+
 	onSubmit() {
 		alert('TODO: check if task is done');
 	}
-	
+
 	render(){
+
 
 		return (
 			<div>
@@ -76,36 +83,13 @@ class Test extends Component {
 								value={this.state.code}
 							/>
 						</Grid.Column>
-						<Grid.Column style={{backgroundColor: ''}} >
-							<Tabs onChange={this.onTabChange} initialSelectedIndex={0} justified>
-				        <Tab value="pane-1" label="Task" onActive={this.onTabActive}>
 
-                            <Button className="buttongroup_1" fluid onClick={this.onRun.bind(this)} positive>
-Run
-                            </Button>
-                            <p style={{backgroundColor: 'white'}} >
+						<Grid.Column>
+							<Tabs onChange={this.onChange} initialSelectedIndex={0} justified>
+				        <Tab value="pane-1" label="Task" onActive={this.onActive}>
+							<Tasks/>
+						</Tab>
 
-                            <p>
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris eleifend, quam a vulputate dictum, massa quam dapibus leo, eget vulputate orci purus ut lorem. In fringilla mi in ligula. Pellentesque aliquam quam vel dolor. Nunc adipiscing. Sed quam odio, tempus ac, aliquam molestie, varius ac, tellus. Vestibulum ut nulla aliquam risus rutrum interdum. Pellentesque lorem. Curabitur sit amet erat quis risus feugiat viverra. Pellentesque augue justo, sagittis et, lacinia at, venenatis non, arcu. Nunc nec libero. In cursus dictum risus. Etiam tristique nisl a nulla. Ut a orci. Curabitur dolor nunc, egestas at, accumsan at, malesuada nec, magna.
-									</p>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris eleifend, quam a vulputate dictum, massa quam dapibus leo, eget vulputate orci purus ut lorem. In fringilla mi in ligula. Pellentesque aliquam quam vel dolor. Nunc adipiscing. Sed quam odio, tempus ac, aliquam molestie, varius ac, tellus. Vestibulum ut nulla aliquam risus rutrum interdum. Pellentesque lorem. Curabitur sit amet erat quis risus feugiat viverra. Pellentesque augue justo, sagittis et, lacinia at, venenatis non, arcu. Nunc nec libero. In cursus dictum risus. Etiam tristique nisl a nulla. Ut a orci. Curabitur dolor nunc, egestas at, accumsan at, malesuada nec, magna.
-									</p>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris eleifend, quam a vulputate dictum, massa quam dapibus leo, eget vulputate orci purus ut lorem. In fringilla mi in ligula. Pellentesque aliquam quam vel dolor. Nunc adipiscing. Sed quam odio, tempus ac, aliquam molestie, varius ac, tellus. Vestibulum ut nulla aliquam risus rutrum interdum. Pellentesque lorem. Curabitur sit amet erat quis risus feugiat viverra. Pellentesque augue justo, sagittis et, lacinia at, venenatis non, arcu. Nunc nec libero. In cursus dictum risus. Etiam tristique nisl a nulla. Ut a orci. Curabitur dolor nunc, egestas at, accumsan at, malesuada nec, magna.
-									</p>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris eleifend, quam a vulputate dictum, massa quam dapibus leo, eget vulputate orci purus ut lorem. In fringilla mi in ligula. Pellentesque aliquam quam vel dolor. Nunc adipiscing. Sed quam odio, tempus ac, aliquam molestie, varius ac, tellus. Vestibulum ut nulla aliquam risus rutrum interdum. Pellentesque lorem. Curabitur sit amet erat quis risus feugiat viverra. Pellentesque augue justo, sagittis et, lacinia at, venenatis non, arcu. Nunc nec libero. In cursus dictum risus. Etiam tristique nisl a nulla. Ut a orci. Curabitur dolor nunc, egestas at, accumsan at, malesuada nec, magna.
-									</p>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris eleifend, quam a vulputate dictum, massa quam dapibus leo, eget vulputate orci purus ut lorem. In fringilla mi in ligula. Pellentesque aliquam quam vel dolor. Nunc adipiscing. Sed quam odio, tempus ac, aliquam molestie, varius ac, tellus. Vestibulum ut nulla aliquam risus rutrum interdum. Pellentesque lorem. Curabitur sit amet erat quis risus feugiat viverra. Pellentesque augue justo, sagittis et, lacinia at, venenatis non, arcu. Nunc nec libero. In cursus dictum risus. Etiam tristique nisl a nulla. Ut a orci. Curabitur dolor nunc, egestas at, accumsan at, malesuada nec, magna.
-									</p>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris eleifend, quam a vulputate dictum, massa quam dapibus leo, eget vulputate orci purus ut lorem. In fringilla mi in ligula. Pellentesque aliquam quam vel dolor. Nunc adipiscing. Sed quam odio, tempus ac, aliquam molestie, varius ac, tellus. Vestibulum ut nulla aliquam risus rutrum interdum. Pellentesque lorem. Curabitur sit amet erat quis risus feugiat viverra. Pellentesque augue justo, sagittis et, lacinia at, venenatis non, arcu. Nunc nec libero. In cursus dictum risus. Etiam tristique nisl a nulla. Ut a orci. Curabitur dolor nunc, egestas at, accumsan at, malesuada nec, magna.
-									</p></p>
-
-
-								</Tab>
 				        <Tab value="pane-2" label="Terminal">
                             <AceEditor
                                 width="100%"
@@ -120,7 +104,7 @@ Run
                                 editorProps={{$blockScrolling: true}}
                                 className="code-editor"
                                 readOnly={true}
-																value={this.props.route.store.code}
+								value={this.props.route.store.code}
                             />
                         </Tab>
 

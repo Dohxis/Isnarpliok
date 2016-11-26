@@ -4,6 +4,52 @@
 .ide-grid-row0{
 	padding-bottom: 0 !important;
 }
+
+.hidden{
+	display: none !important;
+}
+
+.mark-text{
+	margin-right: 10px;
+}
+
+.Collapsible {
+  background-color: white;
+  text-align: left;
+}
+
+.Collapsible__contentInner {
+  padding: 10px;
+  border: 1px solid #ebebeb;
+  border-top: 0; }
+  .Collapsible__contentInner p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 20px; }
+    .Collapsible__contentInner p:last-child {
+      margin-bottom: 0; }
+
+.Collapsible__trigger {
+  display: block;
+  font-weight: 400;
+  text-decoration: none;
+  color: #330033;
+  position: relative;
+  border: 1px solid white;
+  padding: 10px;
+  background: #330033;;
+  color: white; }
+  .Collapsible__trigger:after {
+    font-family: 'FontAwesome';
+    content: '\f107';
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: block;
+    transition: transform 300ms; }
+  .Collapsible__trigger.is-open:after {
+    transform: rotateZ(180deg); }
+
 .buttongroup_1{
 	margin-top: 5px !important;
 	margin-right: 10px !important;
