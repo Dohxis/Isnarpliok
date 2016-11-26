@@ -1,0 +1,16 @@
+.card-prefix{
+		text-align: left !important;
+}
+
+.user-name{
+	font-size: 22px;
+	margin-bottom: 17px;
+}
+
+.extra-attributes{
+	font-size: 17px;
+}
+
+.completed-attribute{
+	float: right;
+}
