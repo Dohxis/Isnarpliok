@@ -43,8 +43,6 @@ function restore_login(){
         user.on('value', snap => {
             store.login(snap.val().identity, localStorage.getItem('id_auth'));
         });
-    } else {
-        browserHistory.push('/');
     }
 }
 
