@@ -1,8 +1,11 @@
+.land_main-container{
+	padding-top: 40px;
+}
 .land_logo{
     padding: 34px 43px;
 	color: #fff;
 }
-.land_particles-background > div{
+.land_particles-background{
 	background-color: #202d3a;
 	position: absolute;
 	left: 0;
@@ -10,6 +13,8 @@
 	width: 100vw;
 	/*height: 100vh;*/
 	z-index: -1;
+    height: 100vh;
+    overflow: hidden;
 }
 .land_left{
 	width: 50%;
@@ -62,7 +67,7 @@
 }
 .land_container{
 	width: 900px !important;
-    /*height: calc(100vh - 80px);*/
+    height: calc(100vh - 80px);
     background-color: rgba(0, 0, 0, 0.21);
     /*margin-top: 40px;*/
     border-radius: 26px;
