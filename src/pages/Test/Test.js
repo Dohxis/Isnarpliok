@@ -15,14 +15,14 @@ import 'brace/theme/cobalt';
 import Tabs from 'muicss/lib/react/tabs';
 import Tab from 'muicss/lib/react/tab';
 
-import Tasks from "./Tasks.js";
 
 @observer
 class Test extends Component {
 
 	constructor() {
 		super();
-		this.state = { code: '// ?', output: '', lvl: '' };
+		this.state = { code: '// Sveiki atvykę :)', output: '', lvl: 2 };
+		this.setState( { lvl: firebase.database().ref().child('/users/' + localStorage.getItem('id_auth') + '/identity/level')} );
 	}
 
 	componentWillMount(){
@@ -31,16 +31,6 @@ class Test extends Component {
 				if(!snap.val())
 					browserHistory.push('/app/select');
 			});
-			
-			this.lvl = firebase.database().ref().child('users/' + localStorage.getItem('id_auth') + '/level');
-	}
-
-	componentWillMount(){
-	    const user = firebase.database().ref().child('users/' + localStorage.getItem('id_auth') + '/active');
-	    user.on('value', snap => {
-	      if(!snap.val())
-	      	browserHistory.push('/app/user/' + localStorage.getItem('id_auth'));
-	    });
 	}
 
 	onChange(i, value, tab, ev) {
@@ -69,6 +59,23 @@ class Test extends Component {
 		eval(codeToEval);
 	}
 	
+	getTask() {
+		switch(this.state.lvl) {
+			case 2:
+				return (
+					<div><p> Ayyy, antra pamoka! </p></div>
+				);
+			case 3:
+				return (
+					<div><p> Ayyy, trečia pamoka! </p></div>
+				);
+			default:
+				return (
+					<div><p> Ayyy, pirma({this.state.lvl}?) pamoka! </p></div>
+				);
+		} 
+		
+	}
 	
 	render(){
 		
@@ -100,11 +107,10 @@ class Test extends Component {
 							
 						</Grid.Column>
 						<Grid.Column width={6}  style={{ borderStyle: 'none', borderLeft: 'solid #A25421' }}>
-							<Tabs onChange={this.onTabChange} initialSelectedIndex={0} justified>
+							<Tabs onChange={this.onTabChange.bind(this)} initialSelectedIndex={0} justified>
 								
-								<Tab value="pane-1" label="Task" onActive={this.onTabActive}>
-									
-									
+								<Tab value="pane-1" label="Task" onActive={this.onTabActive.bind(this)}>
+									{this.getTask()}
 								</Tab>
 								
 								<Tab value="pane-2 notGeneric" label="Terminal" id='terminal' className='notGeneric'>
