@@ -21,8 +21,12 @@ class Test extends Component {
 
 	constructor() {
 		super();
-		this.state = { code: '// Sveiki atvykę :)', output: '', lvl: 2 };
-		this.setState( { lvl: firebase.database().ref().child('/users/' + localStorage.getItem('id_auth') + '/identity/level')} );
+		this.state = {};
+		this.setState({
+			code: '// Sveiki atvykę :)',
+			output: '',
+			lvl: firebase.database().ref().child('/users/' + localStorage.getItem('id_auth') + '/identity/level')
+		})
 	}
 
 	componentWillMount(){
