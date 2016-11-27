@@ -26,7 +26,7 @@ class Test extends Component {
 		this.state = {
 			code: '// Šioje vietoje rašykite visą savo kodą!\n// Sėkmės mokantis :)',
 			output: '',
-			lvl: 1
+			lvl: 0
 		};
 	}
 
