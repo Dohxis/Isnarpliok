@@ -26,7 +26,7 @@ class Test extends Component {
 		this.state = {
 			code: '// Šioje vietoje rašykite visą savo kodą!\n// Sėkmės mokantis :)',
 			output: '',
-			lvl: 1
+			lvl: 1,
 		};
 	}
 
@@ -93,8 +93,11 @@ class Test extends Component {
 
 
 	getTask() {
-		console.log(this.state.lvl);
-		return Task_Data[this.state.lvl].text;
+		return (
+ 			<div className="tasks-prefix" style={{textAlign: 'left'}}>
+ 				<div dangerouslySetInnerHTML={{__html: Task_Data[this.state.lvl].text}} />
+ 			</div>
+ 		);
 	}
 
 	render(){
@@ -131,22 +134,7 @@ class Test extends Component {
 							<Tabs ref="area" onChange={this.onTabChange.bind(this)} initialSelectedIndex={0} justified>
 
 								<Tab value="pane-1" label="Užduotis" onActive={this.onTabActive.bind(this)}>
-									<AceEditor
-										width="100%"
-										height="100vh"
-										mode="javascript"
-										theme="xcode"
-										fontSize={22}
-										showPrintMargin={true}
-										highlightActiveLine={true}
-										name="new_1"
-										showGutter={false}
-										editorProps={{$blockScrolling: true}}
-										className="code-editor"
-										readOnly={true}
-										value={this.getTask()}
-										style={{paddingTop: '13px'}}
-									/>
+									{this.getTask()}
 								</Tab>
 
 								<Tab value="pane-2 notGeneric" label="Išvestis" id='terminal' className='notGeneric'>
