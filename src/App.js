@@ -26,7 +26,19 @@ firebase.initializeApp(config);
 
 var auth = new Auth0Lock('5lEbkHrNuPFVqEKoE5M9LcjMy40ucITe', 'denoodle.eu.auth0.com', {
     languageDictionary: {
-        title: 'Denoodle'
+        title: 'Išnarpliok',
+        loginSubmitLabel: "Prisijunk",
+        loginWithLabel: "Prisijunk su %s",
+        loginLabel: "Prisijungimas",
+        signUpLabel: "Registracija",
+        signUpSubmitLabel: "Registruokis",
+        signUpWithLabel: "Registruokis su %s",
+        databaseAlternativeSignUpInstructions: "arba",
+        databaseEnterpriseAlternativeLoginInstructions: "arba",
+        emailInputPlaceholder: "vardenis@pavardenis.lt",
+        forgotPasswordAction: "Neprisimeni savo slaptažodžio?",
+        passwordInputPlaceholder: "slaptažodis",
+        welcome: "Sveikas atvykę %s!"
     },
     theme: {
         logo: '/logo.png'

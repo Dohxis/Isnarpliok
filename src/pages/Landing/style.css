@@ -153,7 +153,7 @@ body {
     text-decoration: none
 }
 .mui-tabs__bar>li.mui--is-active {
-    background-color: rgb(255, 130, 46) !important;
+    background-color: #e67e22 !important;
     color: #2196F3 !important;
 }
 .mui-tabs__bar>li.mui--is-active>a {
@@ -161,7 +161,7 @@ body {
 }
 .mui-tabs__bar.mui-tabs__bar--justified {
     margin-top: 0 !important;
-    background-color: rgb(162, 84, 33) !important;
+    background-color: #d35400 !important;
     color: white !important;
     display: table;
     width: 100%;

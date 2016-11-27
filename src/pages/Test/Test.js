@@ -24,7 +24,7 @@ class Test extends Component {
 	constructor() {
 		super();
 		this.state = {
-			code: '// Sveiki atvykę :)',
+			code: '// Šioje vietoje rašykite visą savo kodą!\n// Sėkmės mokantis :)',
 			output: '',
 			lvl: 1
 		};
@@ -108,7 +108,7 @@ class Test extends Component {
 			<div>
 				<Grid columns={2}>
 					<Grid.Row className="ide-grid-row0">
-						<Grid.Column style={{ position: 'relative', borderRight: 'solid thick #A25421' }} width={10}>
+						<Grid.Column style={{ position: 'relative', borderRight: 'solid thick #d35400' }} width={10}>
 
 							<AceEditor
 								width="100%"
@@ -131,7 +131,7 @@ class Test extends Component {
 							</Button>
 
 						</Grid.Column>
-						<Grid.Column width={6}  style={{ borderStyle: 'none', borderLeft: 'solid #A25421' }}>
+						<Grid.Column width={6}  style={{ borderStyle: 'none', borderLeft: 'solid #d35400' }}>
 
 							<Tabs ref="area" onChange={this.onTabChange.bind(this)} initialSelectedIndex={0} justified>
 
