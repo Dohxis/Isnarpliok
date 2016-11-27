@@ -69,3 +69,9 @@
 	opacity: 1 !important;
 	cursor: default !important;
 }
+.message-not-selected{
+    width: 500px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center;
+}
