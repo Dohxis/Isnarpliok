@@ -3,22 +3,22 @@ import ReactDOM from 'react-dom';
 
 const tasks = [
 	{
-		 text: "Pirmoji užduotis\n",
+		 text: "Pirmoji užduotis:<br /><br />Kairėje matote jau parašytą tekstą - tai<br />komentarai. Komentarai yra linijos<br />prasidedančios dvejais pasviraisiais<br />brūkšniukais. Komentarai programos<br />nekeičia nes kompiuteris juos ignoruoja.<br /><br />Susipažinkime su kintamaisiais. Kintamieji<br />tai yra tam tikra informacija su kuria<br />kompiuteris gali dirbti. Jie yra rašomi taip:<br /><br />var kintamojoVardas = 42;<br /><br />Pabandytike tai parašyti patys<br />ir paspaukite mygtuką \"Vykdyti\"<br />",
 		 output: "",
-		 variables: ["x=5"]
+		 variables: ["kintamojoVardas=42"]
 	},
 	{
-		 text: "Antroji užduotis\n\nPraeitoje užduotyje išmokome kas yra kintamieji,\nšioje užduotyje vieną pabandysime pasirašyti patys.\n\nJavascript kalboje yra daug rūšių kintamųjų, bet \nšioje pamokoje išmoksime du pagrindinius - skaičių\nir tekstą. Jie yra aprašomi taip:\n\nvar skaicius = 1;\nvar tekstas = \"sveikas pasauli\";\n\nIšsirinkite vieną ir pabandykite susikurti dar vieną kintamajį.",
+		 text: "Antroji užduotis:<br /><br />Praeitoje užduotyje išmokome kas yra<br />kintamieji, šioje užduotyje vieną<br />pabandysime pasirašyti patys.<br /><br />Javascript kalboje yra daug rūšių<br />kintamųjų, bet šioje pamokoje išmoksime<br />du pagrindinius - skaičių ir tekstą.<br />Jie yra aprašomi taip:<br /><br />var skaicius = 1;<br />var tekstas = \"sveikas pasauli\";<br /><br />Išsirinkite vieną ir pabandykite<br />susikurti dar vieną kintamajį.",
 		 output: "",
 		 variables: ["x=5", ""]
 	},
 	{
-		 text: "Trečioji užduotis:\n\nŠioje užduotyje mokinsimės išvesti\ninformaciją į ekraną. Tą darysime\npasinudodami console.log() funkcija.\nJą reikia naudoti taip:\n\nconsole.log(\"jūsų tekstas\");\nconsole.log(5);\n\nvar kintamasis = 10;\nconsole.log(kintamasis);\n\nJusų užduotis yra išvesties ekrane\nparodyti tekstą \"Sveikas pasauli!\".\n",
+		 text: "Trečioji užduotis:<br /><br />Šioje užduotyje mokinsimės išvesti<br />informaciją į ekraną. Tą darysime<br />pasinudodami console.log() funkcija.<br />Ją reikia naudoti taip:<br /><br />console.log(\"jūsų tekstas\");<br />console.log(5);<br /><br />var kintamasis = 10;<br />console.log(kintamasis);<br /><br />Jusų užduotis yra išvesties ekrane<br />parodyti tekstą \"Sveikas pasauli!\".<br />",
 		 output: 'Sveikas pasauli!',
 		 variables: []
 	},
 	{
-		text: "<b> Jūs pabaigėte mūsų kursą. Dėkojame, jog naudojatės mūsų paslauga. </b>",
+		text: "Sveikiname! Jūs baigėte mūsų įvadinį<br />kursą į Javascript. Grįžkite į savo<br />profilį norėdami pasirinkti kitą kursą.",
 		output: "some random shit",
 		variables: ["more=", "random===", "shit=2125="]
 	}
