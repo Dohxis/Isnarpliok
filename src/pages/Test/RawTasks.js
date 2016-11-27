@@ -14,7 +14,7 @@ const tasks = [
 	},
 	{
 		 text: "Trečioji užduotis:\n\nŠioje užduotyje mokinsimės išvesti\ninformaciją į ekraną. Tą darysime\npasinudodami console.log() funkcija.\nJą reikia naudoti taip:\n\nconsole.log(\"jūsų tekstas\");\nconsole.log(5);\n\nvar kintamasis = 10;\nconsole.log(kintamasis);\n\nJusų užduotis yra išvesties ekrane\nparodyti tekstą \"Sveikas pasauli!\".\n",
-		 output: 'lhs',
+		 output: 'Sveikas pasauli!',
 		 variables: []
 	},
 	{

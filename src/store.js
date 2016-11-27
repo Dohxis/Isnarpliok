@@ -51,6 +51,7 @@ class Store {
         var done_output = true;
         if(Task_Data[lvl].output != ""){
             if(String(Task_Data[lvl].output) != String(this.code).trim()){
+                console.log(String(Task_Data[lvl].output), "nelygu", String(this.code).trim());
                 done_output = false;
             }
         }
