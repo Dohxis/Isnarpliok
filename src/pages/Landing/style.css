@@ -102,6 +102,9 @@
     font-size: 20px;
     line-height: 20px;
 }
+.white_link > .image{
+    font-size: 25px;
+}
 
 .mui-tabs__pane{
   overflow-y: hidden;
