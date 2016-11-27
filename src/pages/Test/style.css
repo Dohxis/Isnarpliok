@@ -60,6 +60,12 @@
 	background: rgb(162, 84, 33) !important;
 }
 
+.tasks-prefix{
+	padding: 30px;
+	font-family: sans-serif;
+	font-size: 16px;
+}
+
 ._mint {
 	background: rgb(255, 130, 46) !important;
 }
