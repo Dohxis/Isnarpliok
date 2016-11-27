@@ -9,7 +9,7 @@ import './style.css';
 import AceEditor from 'react-ace';
 
 import 'brace/mode/java';
-import 'brace/theme/github';
+import 'brace/theme/xcode';
 import 'brace/mode/javascript';
 import 'brace/theme/cobalt';
 
@@ -95,11 +95,7 @@ class Test extends Component {
 
 	getTask() {
 		console.log(this.state.lvl);
-		return (
-			<div className="tasks-prefix" style={{textAlign: 'left'}}>
-				<div dangerouslySetInnerHTML={{__html: Task_Data[this.state.lvl].text}} />
-			</div>
-		);
+		return Task_Data[this.state.lvl].text;
 	}
 
 	render(){
@@ -136,7 +132,22 @@ class Test extends Component {
 							<Tabs ref="area" onChange={this.onTabChange.bind(this)} initialSelectedIndex={0} justified>
 
 								<Tab value="pane-1" label="Užduotis" onActive={this.onTabActive.bind(this)}>
-									{this.getTask()}
+									<AceEditor
+										width="100%"
+										height="100vh"
+										mode="javascript"
+										theme="xcode"
+										fontSize={22}
+										showPrintMargin={true}
+										highlightActiveLine={true}
+										name="new_1"
+										showGutter={false}
+										editorProps={{$blockScrolling: true}}
+										className="code-editor"
+										readOnly={true}
+										value={this.getTask()}
+										style={{paddingTop: '13px'}}
+									/>
 								</Tab>
 
 								<Tab value="pane-2 notGeneric" label="Išvestis" id='terminal' className='notGeneric'>

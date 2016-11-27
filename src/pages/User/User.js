@@ -5,17 +5,24 @@ import * as firebase from 'firebase';
 import GithubActivity from '../../components/GithubActivity';
 import "./User.css";
 import { Button, Header, Image, Modal } from 'semantic-ui-react'
+import moment from 'moment';
 
 class User extends Component {
 	constructor(){
 	   super();
 	   this.state = {
 		   user_data: {},
-		   active: true
+		   active: true,
+		   showLang: false
 	   }
 	}
 
 	continueCourse() {
+		browserHistory.push('/app');
+	}
+	
+	start() {
+		firebase.database().ref().child('users/' + this.props.route.store.userID + '/active').set(true);
 		browserHistory.push('/app');
 	}
 
@@ -44,8 +51,8 @@ class User extends Component {
 	}
 
 	render(){
-
 		var _this = this;
+
 		return (
 			<div className="App">
 				{this.showModal.bind(this)}
@@ -61,8 +68,14 @@ class User extends Component {
 								</Grid.Column>
 								<Grid.Column width={4}>
 									<div className="user-name"><b> {_this.state.user_data.identity? _this.state.user_data.identity.nickname: "spaghetti"}</b></div>
-									<div className="extra-attributes user-level"><Icon color="black" name="user empty star" /><b>Lygis </b> 3</div>
-									<div className="extra-attributes user-since"><Icon color="black" name="user checked calendar" /><b>Užsiregistravo </b> 2016-13-84 </div>
+									<div className="extra-attributes user-level"><Icon color="black" name="user empty star" />
+										<b>Lygis </b>
+										{_this.state.user_data.identity? _this.state.user_data.identity.level:""}
+									</div>
+									<div className="extra-attributes user-since"><Icon color="black" name="user checked calendar" />
+										<b>Užsiregistravo </b>
+										{_this.state.user_data.identity? moment(_this.state.user_data.identity.created_at).format("YYYY-MM-DD") :""}
+									</div>
 								</Grid.Column>
 								<Grid.Column style={{marginTop: '20px'}} className="user_social-media" width={9}>
 									<GithubActivity />
@@ -73,9 +86,9 @@ class User extends Component {
 						<Grid columns={4} className="user_languages">
 							<Grid.Row>
 								<Grid.Column width={4}>
-									<center><Image size="small" src="/js.png" /></center>
-									<Button onClick={this.continueCourse.bind(this)} className="user_continue" basic color='green'>Tęsti <b>JavaScript</b> kursą</Button>
-								</Grid.Column>
+									<center><Image className={!_this.state.user_data.active? 'image-grayscale' : '' } size="small" src="/js.png" /></center>
+									{_this.state.user_data.active? <Button onClick={this.continueCourse.bind(this)} className="user_continue" basic color='green'>Tęsti <b>JavaScript</b> kursą</Button> : <Button onClick={this.start.bind(this)} className="user_continue" basic color='green'>Pradėti <b>JavaScript</b> kursą</Button> }
+								 </Grid.Column>
 								<Grid.Column width={4}>
 									<center><Image className="image-grayscale" size="small" src="/python.png" /></center>
 									<Button disabled className="user_start-course" basic color='grey'>Pradėti <b>Python</b> kursą</Button>
