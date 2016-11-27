@@ -52,12 +52,15 @@ var auth = new Auth0Lock('5lEbkHrNuPFVqEKoE5M9LcjMy40ucITe', 'denoodle.eu.auth0.
 });
 
 function restore_login(){
-    if(!store.user.name && localStorage.getItem('id_auth')) {
+
+        if(!store.user.name && localStorage.getItem('id_auth')) {
         const user = firebase.database().ref().child('users/' + localStorage.getItem('id_auth'));
         user.on('value', snap => {
             store.login(snap.val(), localStorage.getItem('id_auth'));
         });
     }
+
+
 }
 
 class App extends Component {

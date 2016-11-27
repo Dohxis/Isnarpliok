@@ -4,7 +4,7 @@ import { browserHistory } from 'react-router';
 import * as firebase from 'firebase';
 import GithubActivity from '../../components/GithubActivity';
 import "./User.css";
-import { Button, Header, Image, Modal } from 'semantic-ui-react'
+import { Button, Header, Image, Modal, Message } from 'semantic-ui-react'
 import moment from 'moment';
 
 class User extends Component {
@@ -20,7 +20,7 @@ class User extends Component {
 	continueCourse() {
 		browserHistory.push('/app');
 	}
-	
+
 	start() {
 		firebase.database().ref().child('users/' + this.props.route.store.userID + '/active').set(true);
 		browserHistory.push('/app');
@@ -70,7 +70,7 @@ class User extends Component {
 									<div className="user-name"><b> {_this.state.user_data.identity? _this.state.user_data.identity.nickname: "spaghetti"}</b></div>
 									<div className="extra-attributes user-level"><Icon color="black" name="user empty star" />
 										<b>Lygis </b>
-										{_this.state.user_data.identity? _this.state.user_data.identity.level:""}
+										{_this.state.user_data.level ? _this.state.user_data.level : '0' }
 									</div>
 									<div className="extra-attributes user-since"><Icon color="black" name="user checked calendar" />
 										<b>Užsiregistravo </b>
@@ -82,7 +82,9 @@ class User extends Component {
 								</Grid.Column>
 							</Grid.Row>
 						</Grid>
-						<Divider />
+
+						{!_this.state.user_data.active? <Message info className="message-not-selected"><Message.Header>Jūs dar nepasirinkote nei vieno kurso!</Message.Header><p>Prašome pasirinkti kursą iš pateiktų apačioje</p></Message> : <Divider />}
+
 						<Grid columns={4} className="user_languages">
 							<Grid.Row>
 								<Grid.Column width={4}>
