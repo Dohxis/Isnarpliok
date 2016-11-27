@@ -3,22 +3,22 @@ import ReactDOM from 'react-dom';
 
 const tasks = [
 	{
-		 text: "Pirmoji užduotis:<br /><br />Kairėje matote jau parašytą tekstą - tai<br />komentarai. Komentarai yra linijos<br />prasidedančios dvejais pasviraisiais<br />brūkšniukais. Komentarai programos<br />nekeičia nes kompiuteris juos ignoruoja.<br /><br />Susipažinkime su kintamaisiais. Kintamieji<br />tai yra tam tikra informacija su kuria<br />kompiuteris gali dirbti. Jie yra rašomi taip:<br /><br />var kintamojoVardas = 42;<br /><br />Pabandytike tai parašyti patys<br />ir paspaukite mygtuką \"Vykdyti\"<br />",
+		 text: "<h1>Pirmoji užduotis:</h1> <br/><br/>Kairėje matote jau parašytą tekstą - tai komentarai. Komentarai yra linijos prasidedančios dvejais pasviraisiais brūkšniukais. Komentarai programos nekeičia nes kompiuteris juos ignoruoja.  Susipažinkime su kintamaisiais. Kintamieji tai yra tam tikra informacija su kuria kompiuteris gali dirbti. Jie yra rašomi taip:<br/><br/>  <font color='#d35400'> var </font> kintamojoVardas = <font color='#e74c3c'> 42</font>;  <br/><br/> <b>Pabandytike tai parašyti patys ir paspaukite mygtuką \"Vykdyti\". </b>",
 		 output: "",
-		 variables: ["kintamojoVardas=42"]
+		 variables: ["x=5"]
 	},
 	{
-		 text: "Antroji užduotis:<br /><br />Praeitoje užduotyje išmokome kas yra<br />kintamieji, šioje užduotyje vieną<br />pabandysime pasirašyti patys.<br /><br />Javascript kalboje yra daug rūšių<br />kintamųjų, bet šioje pamokoje išmoksime<br />du pagrindinius - skaičių ir tekstą.<br />Jie yra aprašomi taip:<br /><br />var skaicius = 1;<br />var tekstas = \"sveikas pasauli\";<br /><br />Išsirinkite vieną ir pabandykite<br />susikurti dar vieną kintamajį.",
+		 text: "<h1>Antroji užduotis:</h1><br/><br/>Praeitoje užduotyje išmokome kas yra kintamieji,šioje užduotyje vieną pabandysime pasirašyti patys.Javascript kalboje yra daug rūšių kintamųjų, bet šioje pamokoje išmoksime du pagrindinius - skaičiųir tekstą. Jie yra aprašomi taip:<br/></br><font color='#d35400'> var </font> skaicius = <font color='#e74c3c'> 1</font>;<br/><font color='#d35400'> var </font> tekstas = <font color='#27ae60'>\"sveikas pasauli\"</font>;<b><br/><br/>Išsirinkite vieną ir pabandykite susikurti dar vieną kintamajį.</b>",
 		 output: "",
 		 variables: ["x=5", ""]
 	},
 	{
-		 text: "Trečioji užduotis:<br /><br />Šioje užduotyje mokinsimės išvesti<br />informaciją į ekraną. Tą darysime<br />pasinudodami console.log() funkcija.<br />Ją reikia naudoti taip:<br /><br />console.log(\"jūsų tekstas\");<br />console.log(5);<br /><br />var kintamasis = 10;<br />console.log(kintamasis);<br /><br />Jusų užduotis yra išvesties ekrane<br />parodyti tekstą \"Sveikas pasauli!\".<br />",
+		 text: "<h1>Trečioji užduotis:</h1><br/><br/>Šioje užduotyje mokinsimės išvestiinformaciją į ekraną. Tą darysimepasinudodami <font color='#e67e22'>console.</font><font color='#3498db'>log()</font> funkcija.<br/>Ją reikia naudoti taip:<br/><br/><font color='#e67e22'>console.</font><font color='#3498db'>log(</font><font color='#27ae60'>\"jūsų tekstas\"</font><font color='#3498db'>)</font>;<br/><font color='#e67e22'>console.</font><font color='#3498db'>log(</font><font color='#e74c3c'>5</font><font color='#3498db'>)</font>;<font color='#d35400'><br/><br/> var </font> kintamasis = <font color='#e74c3c'> 10 </font>;<font color='#e67e22'></br>console.</font><font color='#3498db'>log(</font>kintamasis<font color='#3498db'>)</font>;<b></br></br>Jusų užduotis yra išvesties ekrane  parodyti tekstą <font color='#27ae60'>\"Sveikas pasauli!\"</font>.</b>",
 		 output: 'Sveikas pasauli!',
 		 variables: []
 	},
 	{
-		text: "Sveikiname! Jūs baigėte mūsų įvadinį<br />kursą į Javascript. Grįžkite į savo<br />profilį norėdami pasirinkti kitą kursą.",
+		text: '<b>Jūs pabaigėte mūsų kursą. Dėkojame, jog naudojatės mūsų paslauga. </b><br/><br/> <div class="ui icon mailing" style="color: #27ae60;text-align: center"><i class="massive checkmark icon" style="color: #27ae60"></i></div> ',
 		output: "some random shit",
 		variables: ["more=", "random===", "shit=2125="]
 	}
