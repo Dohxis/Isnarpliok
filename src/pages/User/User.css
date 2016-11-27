@@ -54,6 +54,10 @@
 .user_start-learning{
 	margin-top: 5px;
 }
+.user_continue:hover{
+    background-color: #16ab39 !important;
+    color: #FFF !important;
+}
 .image-grayscale{
     filter: grayscale(100%);
 }
