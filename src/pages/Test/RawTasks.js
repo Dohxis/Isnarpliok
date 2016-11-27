@@ -1,12 +1,26 @@
+import React, {Component} from 'react'
+import ReactDOM from 'react-dom';
+
 const tasks = [
 	{
-		 text: "Lorem ipsum dolor sit amet, te mel fugit feugiat sapientem, ipsum assentior forensibus id duo. Cu lucilius praesent nec. Quando putent recteque ut duo, at vix reque homero nonumes, ei has regione sententiae. Mucius maiestatis in nam. Iusto prompta id eam, tation exerci dissentias sed ne. In eam deserunt inciderint."
+		 text: "<div> works </div>",
+		 output: "",
+		 variables: ["x=5"]
 	},
 	{
-		 text: "Lorem ipsum dolor sit amet, te mel fugit feugiat sapientem, ipsum assentior forensibus id duo. Cu lucilius praesent nec. Quando putent recteque ut duo, at vix reque homero nonumes, ei has regione sententiae. Mucius maiestatis in nam. Iusto prompta id eam, tation exerci dissentias sed ne. In eam deserunt inciderint."
+		 text: "Ayyyyy, Antra pamoka",
+		 output: "",
+		 variables: ["x=5", ""]
 	},
 	{
-		 text: "Hello everyone, AinoraZ here! And today we are doing another minecraft video, hahahhahahh! Omg kill me now I need sleep so much Edve yra duxas, Domas salty, lukas cool"
+		 text: "Ayyyy, Trecia pamoka",
+		 output: 'lhs',
+		 variables: []
+	},
+	{
+		text: "<b> Jūs pabaigėte mūsų kursą. Dėkojame, jog naudojatės mūsų paslauga. </b>",
+		output: "some random shit",
+		variables: ["more=", "random===", "shit=2125="]
 	}
 ];
 

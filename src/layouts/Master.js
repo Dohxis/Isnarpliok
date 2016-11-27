@@ -53,7 +53,7 @@ class Master extends Component {
         const logo = (
             <span>
                 <Image className="master_white-logo" avatar src="/logo_white.png"/>
-                <span>Denoodle</span>
+                <span>Išnarpliok</span>
             </span>
         )
         var _this = this;

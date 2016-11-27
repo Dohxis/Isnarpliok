@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import ReactDOM from 'react-dom';
 import {observer} from 'mobx-react'
 import * as firebase from 'firebase'
 import {browserHistory} from 'react-router'
@@ -14,33 +15,37 @@ import 'brace/theme/cobalt';
 
 import Tabs from 'muicss/lib/react/tabs';
 import Tab from 'muicss/lib/react/tab';
+import Task_Data from './RawTasks.js';
 
-import Tasks from "./Tasks.js";
 
 @observer
 class Test extends Component {
 
 	constructor() {
 		super();
-		this.state = { code: '// ?', output: '', lvl: '' };
+		this.state = {
+			code: '// Sveiki atvykę :)',
+			output: '',
+			lvl: 1
+		};
 	}
 
-	componentWillMount(){
+	componentDidMount(){
+		var _this = this;
 			const user = firebase.database().ref().child('users/' + localStorage.getItem('id_auth') + '/active');
 			user.on('value', snap => {
 				if(!snap.val())
 					browserHistory.push('/app/select');
 			});
-			
-			this.lvl = firebase.database().ref().child('users/' + localStorage.getItem('id_auth') + '/level');
-	}
 
-	componentWillMount(){
-	    const user = firebase.database().ref().child('users/' + localStorage.getItem('id_auth') + '/active');
-	    user.on('value', snap => {
-	      if(!snap.val())
-	      	browserHistory.push('/app/user/' + localStorage.getItem('id_auth'));
-	    });
+			const lvl = firebase.database().ref().child('/users/' + localStorage.getItem('id_auth') + '/level');
+			lvl.on('value', snap =>{
+				if(snap.val() != null){
+					_this.setState({
+						lvl: snap.val()
+					});
+				}
+			});
 	}
 
 	onChange(i, value, tab, ev) {
@@ -57,27 +62,54 @@ class Test extends Component {
 
 	onCodeChange(newValue) {
 		 // eslint-disable-next-line
-		this.state.code = newValue;
+		this.setState({
+			code: newValue
+		});
 	}
-	
+
 	runCode() {
 		var codeToEval = this.state.code.replace(/console.log/g, "window.store.updateCode");
+		var codeToEval = codeToEval.replace(/var /g, "window.store.foundVar(); var ");
+		var array = codeToEval.split(';');
+		var variables = [];
+		for(var x = 0; x < array.length; x++){
+			if(array[x].includes("var ")){
+				variables.push(array[x].split("var ")[1].replace(/ /g, ""));
+			}
+		}
+		this.props.route.store.variables = variables;
+		this.props.route.store.vars_found = 0;
 		this.props.route.store.code = '';
 		console.log(codeToEval);
+		console.log(this.state.lvl);
 		//$( ".a:contains('Terminal')" ).click();
 		// eslint-disable-next-line
 		eval(codeToEval);
+
+		this.props.route.store.run(this.state.lvl);
+        this.refs.area.setState({
+            currentSelectedIndex: 1
+        });
 	}
-	
-	
+
+
+	getTask() {
+		console.log(this.state.lvl);
+		return (
+			<div className="tasks-prefix" style={{textAlign: 'left'}}>
+				<div dangerouslySetInnerHTML={{__html: Task_Data[this.state.lvl].text}} />
+			</div>
+		);
+	}
+
 	render(){
-		
+
 		return (
 			<div>
 				<Grid columns={2}>
 					<Grid.Row className="ide-grid-row0">
 						<Grid.Column style={{ position: 'relative', borderRight: 'solid thick #A25421' }} width={10}>
-							
+
 							<AceEditor
 								width="100%"
 								height="calc(100vh - 70px)"
@@ -92,22 +124,22 @@ class Test extends Component {
 								className="code-editor"
 								value={this.state.code}
 							/>
-							
+
 							<Button color='green' onClick={this.runCode.bind(this)} style={{ position: 'absolute', top: '7px', right: '7px', zIndex: '999', marginRight: '0' }}>
 								<Icon name='play' />
 								Vykdyti
 							</Button>
-							
+
 						</Grid.Column>
 						<Grid.Column width={6}  style={{ borderStyle: 'none', borderLeft: 'solid #A25421' }}>
-							<Tabs onChange={this.onTabChange} initialSelectedIndex={0} justified>
-								
-								<Tab value="pane-1" label="Task" onActive={this.onTabActive}>
-									
-									
+
+							<Tabs ref="area" onChange={this.onTabChange.bind(this)} initialSelectedIndex={0} justified>
+
+								<Tab value="pane-1" label="Užduotis" onActive={this.onTabActive.bind(this)}>
+									{this.getTask()}
 								</Tab>
-								
-								<Tab value="pane-2 notGeneric" label="Terminal" id='terminal' className='notGeneric'>
+
+								<Tab value="pane-2 notGeneric" label="Išvestis" id='terminal' className='notGeneric'>
 									<AceEditor
 										width="100%"
 										height="100vh"
@@ -125,7 +157,7 @@ class Test extends Component {
 										style={{paddingTop: '13px'}}
 									/>
 								</Tab>
-								
+
 							</Tabs>
 						</Grid.Column>
 					</Grid.Row>
