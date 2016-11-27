@@ -30,14 +30,13 @@ class Test extends Component {
 		};
 	}
 
+	componentWillMount(){
+		if(!this.props.route.store.user.active)
+					browserHistory.push('/app/user/' + this.props.route.store.userID);
+	}
+
 	componentDidMount(){
 		var _this = this;
-			const user = firebase.database().ref().child('users/' + localStorage.getItem('id_auth') + '/active');
-			user.on('value', snap => {
-				if(!snap.val())
-					browserHistory.push('/app/select');
-			});
-
 			const lvl = firebase.database().ref().child('/users/' + localStorage.getItem('id_auth') + '/level');
 			lvl.on('value', snap =>{
 				if(snap.val() != null){
