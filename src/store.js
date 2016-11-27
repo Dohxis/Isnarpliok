@@ -51,13 +51,14 @@ class Store {
         var done_output = true;
         if(Task_Data[lvl].output != ""){
             if(String(Task_Data[lvl].output) != String(this.code).trim()){
+                console.log(String(Task_Data[lvl].output), "nelygu", String(this.code).trim());
                 done_output = false;
             }
         }
 
         if(done_output && done_variables){
             if(lvl + 1 != Task_Data.length){
-                this.updateCode("\n\n Šaunu. Jūs atrakinote kitą užduotį.");
+                this.updateCode("\n\n Šaunu jūs susitvarkėte su užduotimi!\n Spauskite 'Užduotis' mygtuką tęsti kursą.");
                 firebase.database().ref().child('/users/' + localStorage.getItem('id_auth') + '/level').set(lvl + 1);
             }
             else {

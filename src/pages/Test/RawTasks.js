@@ -3,18 +3,18 @@ import ReactDOM from 'react-dom';
 
 const tasks = [
 	{
-		 text: "<div> works </div>",
+		 text: "Pirmoji užduotis\n",
 		 output: "",
 		 variables: ["x=5"]
 	},
 	{
-		 text: "Ayyyyy, Antra pamoka",
+		 text: "Antroji užduotis\n\nPraeitoje užduotyje išmokome kas yra kintamieji,\nšioje užduotyje vieną pabandysime pasirašyti patys.\n\nJavascript kalboje yra daug rūšių kintamųjų, bet \nšioje pamokoje išmoksime du pagrindinius - skaičių\nir tekstą. Jie yra aprašomi taip:\n\nvar skaicius = 1;\nvar tekstas = \"sveikas pasauli\";\n\nIšsirinkite vieną ir pabandykite susikurti dar vieną kintamajį.",
 		 output: "",
 		 variables: ["x=5", ""]
 	},
 	{
-		 text: "Ayyyy, Trecia pamoka",
-		 output: 'lhs',
+		 text: "Trečioji užduotis:\n\nŠioje užduotyje mokinsimės išvesti\ninformaciją į ekraną. Tą darysime\npasinudodami console.log() funkcija.\nJą reikia naudoti taip:\n\nconsole.log(\"jūsų tekstas\");\nconsole.log(5);\n\nvar kintamasis = 10;\nconsole.log(kintamasis);\n\nJusų užduotis yra išvesties ekrane\nparodyti tekstą \"Sveikas pasauli!\".\n",
+		 output: 'Sveikas pasauli!',
 		 variables: []
 	},
 	{
