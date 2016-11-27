@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import ReactDOM from 'react-dom';
 import {observer} from 'mobx-react'
 import * as firebase from 'firebase'
 import {browserHistory} from 'react-router'
@@ -67,7 +68,12 @@ class Test extends Component {
 		//$( ".a:contains('Terminal')" ).click();
 		// eslint-disable-next-line
 		eval(codeToEval);
+
+        this.refs.area.setState({
+            currentSelectedIndex: 1
+        });
 	}
+
 	
 	
 	render(){
@@ -100,13 +106,15 @@ class Test extends Component {
 							
 						</Grid.Column>
 						<Grid.Column width={6}  style={{ borderStyle: 'none', borderLeft: 'solid #A25421' }}>
-							<Tabs onChange={this.onTabChange} initialSelectedIndex={0} justified>
+                            <div >
+                            </div>
+							<Tabs ref="area" onChange={this.onTabChange} initialSelectedIndex={0} justified>
 								
 								<Tab value="pane-1" label="Task" onActive={this.onTabActive}>
 									
 									
 								</Tab>
-								
+
 								<Tab value="pane-2 notGeneric" label="Terminal" id='terminal' className='notGeneric'>
 									<AceEditor
 										width="100%"
